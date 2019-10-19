@@ -10,6 +10,7 @@ import MessageBubble from "./components/MessageBubble";
 import Messages from "./components/Messages";
 import Logo from "./components/Logo";
 import Nav from "./components/Nav";
+import Hero from "./components/Hero";
 
 Vue.component(Button.name, Button);
 Vue.component(Row.name, Row);
@@ -19,6 +20,7 @@ Vue.component(MessageBubble.name, MessageBubble);
 Vue.component(Logo.name, Logo);
 Vue.component(Nav.name, Nav);
 Vue.component(Messages.name, Messages);
+Vue.component(Hero.name, Hero);
 
 Vue.config.productionTip = false;
 
