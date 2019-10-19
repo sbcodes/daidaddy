@@ -60,26 +60,28 @@ contract("DaiDaddy", ([contractOwner, seller, buyer, random]) => {
     })
     context("Sell CDP to DaiDaddy", function () {
         it("Transfers the CDP with Give", async function () {
-            console.log("seller", seller)
-            console.log("buyer", buyer)
-            console.log("contract", this.daiDaddy.address)
+            await this.daiDaddy.sellCDP(cupId, discount, {
+                from: seller
+            })
+            let cupLad = await this.saiTub.lad(cupId)
+            assert.equal(this.daiDaddy.address, cupLad, "Did not correctly transfer the CDP to daiDaddy")
 
-
-            let valueBefore = await this.saiTub.lad(cupId)
-            console.log("v before", valueBefore)
-
+            let addedSale = await this.daiDaddy.debtBook.call(0);
+            assert.equal(addedSale.cupId, cupId, "CupId not set correctly")
+            assert.equal(addedSale.owner, seller, "seller not set correctly")
+            assert.equal(addedSale.discount.toString(10), discount, "discount not set correctly")
+            assert.equal(addedSale.status.toString(10), 0, "status not set correctly")
+        })
+    })
+    context("Buy CDP from DaiDaddy", function () {
+        it("Correctly enables sale if value is correct", async function () {
             await this.daiDaddy.sellCDP(cupId, discount, {
                 from: seller
             })
 
-            // await this.saiTub.give(cupId, this.daiDaddy.address, {from: seller})
-
-            valueAfter = await this.saiTub.lad(cupId)
-            console.log("v after ", valueAfter)
-
-            let cupLad = await this.saiTub.lad(cupId)
-            assert.equal(this.daiDaddy.address, cupLad, "Did not correctly transfer the CDP to daiDaddy")
-            console.log("the lad", cupLad)
+            let value = await this.daiDaddy.buyCDP.call(cupId)
+            console.log("value", value.toString())
         })
     })
+
 })
