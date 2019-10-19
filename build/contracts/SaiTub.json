@@ -17,6 +17,20 @@
     },
     {
       "constant": true,
+      "inputs": [],
+      "name": "tabValue",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
       "inputs": [
         {
           "name": "",
@@ -66,6 +80,14 @@
         },
         {
           "name": "_cupIre",
+          "type": "uint256"
+        },
+        {
+          "name": "_cupTab",
+          "type": "uint256"
+        },
+        {
+          "name": "_uintRap",
           "type": "uint256"
         }
       ],
@@ -182,25 +204,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"}],\"name\":\"ink\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"cupi\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"}],\"name\":\"rap\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"},{\"name\":\"guy\",\"type\":\"address\"}],\"name\":\"give\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"chi\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"}],\"name\":\"lad\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"}],\"name\":\"tab\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"cups\",\"outputs\":[{\"name\":\"lad\",\"type\":\"address\"},{\"name\":\"ink\",\"type\":\"uint256\"},{\"name\":\"art\",\"type\":\"uint256\"},{\"name\":\"ire\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"cupId\",\"type\":\"bytes32\"},{\"name\":\"_cupLad\",\"type\":\"address\"},{\"name\":\"_cupInk\",\"type\":\"uint256\"},{\"name\":\"_cupArt\",\"type\":\"uint256\"},{\"name\":\"_cupIre\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol\":\"SaiTub\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol\":{\"keccak256\":\"0xac0de663b8962486a32730838075bbf6f0dba7daed99dca2265b5eeb5376cd1e\",\"urls\":[\"bzzr://0521a1c0b8278175d560c700a01c3b7c9b9b99a9c07fec87fbd6455203affd74\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405160a0806104f6833981018060405260a081101561003057600080fd5b81019080805190602001909291908051906020019092919080519060200190929190805190602001909291908051906020019092919050505060405180608001604052808573ffffffffffffffffffffffffffffffffffffffff168152602001848152602001838152602001828152506001600087815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010155604082015181600201556060820151816003015590505050505050506103c78061012f6000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063c92aecc41161005b578063c92aecc41461017d578063de5f55171461019b578063f7c8d63414610209578063fdac00251461024b57610088565b80631f3634ed1461008d57806349955431146100cf5780636f78ee0d146100ed578063baa8529c1461012f575b600080fd5b6100b9600480360360208110156100a357600080fd5b81019080803590602001909291905050506102ce565b6040518082815260200191505060405180910390f35b6100d76102ee565b6040518082815260200191505060405180910390f35b6101196004803603602081101561010357600080fd5b81019080803590602001909291905050506102f4565b6040518082815260200191505060405180910390f35b61017b6004803603604081101561014557600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102fb565b005b6101856102ff565b6040518082815260200191505060405180910390f35b6101c7600480360360208110156101b157600080fd5b8101908080359060200190929190505050610304565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102356004803603602081101561021f57600080fd5b8101908080359060200190929190505050610344565b6040518082815260200191505060405180910390f35b6102776004803603602081101561026157600080fd5b810190808035906020019092919050505061034b565b604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390f35b600060016000838152602001908152602001600020600101549050919050565b60005481565b6000919050565b5050565b600090565b60006001600083815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000919050565b60016020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690806001015490806002015490806003015490508456fea165627a7a7230582077c74121bb6b60d86caeef161067155ebf99bc59d594a4e1d0866cd3324fed440029",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c8063c92aecc41161005b578063c92aecc41461017d578063de5f55171461019b578063f7c8d63414610209578063fdac00251461024b57610088565b80631f3634ed1461008d57806349955431146100cf5780636f78ee0d146100ed578063baa8529c1461012f575b600080fd5b6100b9600480360360208110156100a357600080fd5b81019080803590602001909291905050506102ce565b6040518082815260200191505060405180910390f35b6100d76102ee565b6040518082815260200191505060405180910390f35b6101196004803603602081101561010357600080fd5b81019080803590602001909291905050506102f4565b6040518082815260200191505060405180910390f35b61017b6004803603604081101561014557600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102fb565b005b6101856102ff565b6040518082815260200191505060405180910390f35b6101c7600480360360208110156101b157600080fd5b8101908080359060200190929190505050610304565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102356004803603602081101561021f57600080fd5b8101908080359060200190929190505050610344565b6040518082815260200191505060405180910390f35b6102776004803603602081101561026157600080fd5b810190808035906020019092919050505061034b565b604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390f35b600060016000838152602001908152602001600020600101549050919050565b60005481565b6000919050565b5050565b600090565b60006001600083815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b6000919050565b60016020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690806001015490806002015490806003015490508456fea165627a7a7230582077c74121bb6b60d86caeef161067155ebf99bc59d594a4e1d0866cd3324fed440029",
-  "sourceMap": "25:1428:2:-;;;430:172;8:9:-1;5:2;;;30:1;27;20:12;5:2;430:172:2;;;;;;;;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;430:172:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;556:39;;;;;;;;560:7;556:39;;;;;;569:7;556:39;;;;578:7;556:39;;;;587:7;556:39;;;542:4;:11;547:5;542:11;;;;;;;;;;;:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;430:172;;;;;25:1428;;;;;;",
-  "deployedSourceMap": "25:1428:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:1428:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;966:90;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;966:90:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;47:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1261:116;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1261:116:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;608:165;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;608:165:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1383:68;;;:::i;:::-;;;;;;;;;;;;;;;;;;;808:93;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;808:93:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1105:101;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1105:101:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;91:38;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;91:38:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;966:90;1013:4;1036;:9;1041:3;1036:9;;;;;;;;;;;:13;;;1029:20;;966:90;;;:::o;47:38::-;;;;:::o;1261:116::-;1303:4;1261:116;;;:::o;608:165::-;;;:::o;1383:68::-;1414:4;1383:68;:::o;808:93::-;855:7;881:4;:9;886:3;881:9;;;;;;;;;;;:13;;;;;;;;;;;;874:20;;808:93;;;:::o;1105:101::-;1147:4;1105:101;;;:::o;91:38::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity^0.5.3;\n\n\ncontract SaiTub {\n    uint256                   public  cupi;\n    mapping (bytes32 => Cup)  public  cups;\n\n    struct Cup {\n        address  lad;      // CDP owner\n        uint256  ink;      // Locked collateral (in SKR)\n        uint256  art;      // Outstanding normalised debt (tax only)\n        uint256  ire;      // Outstanding normalised debt\n    }\n\n    uint256 _chi;  // Accumulated Tax Rates\n\n\n    constructor(bytes32 cupId, address _cupLad, uint256 _cupInk, uint256 _cupArt, uint256 _cupIre) public {\n        cups[cupId] = Cup(_cupLad, _cupInk, _cupArt, _cupIre);\n    }\n\n    function give(bytes32 cup, address guy) public {\n        // require(msg.sender == cups[cup].lad);\n        // require(guy != 0);\n        // cups[cup].lad = guy;\n    }\n\n    //get the owner of a cup\n    function lad(bytes32 cup) public view returns (address) {\n        return cups[cup].lad;\n    }\n    \n    //get the amount of skr collateral locked in a cup\n    function ink(bytes32 cup) public view returns (uint) {\n        return cups[cup].ink;\n    }\n    \n    // get the amount of debt in a cup\n    function tab(bytes32 cup) public returns (uint) {\n        // return rmul(cups[cup].art, chi());\n    }\n    // get the amount of governance debt in a cup\n    function rap(bytes32 cup) public returns (uint) {\n        // return sub(rmul(cups[cup].ire, rhi()), tab(cup));\n    }\n\n    function chi() public returns (uint) {\n        // return _chi;\n    }\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"}],\"name\":\"ink\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"cupi\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"}],\"name\":\"rap\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"tabValue\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"},{\"name\":\"guy\",\"type\":\"address\"}],\"name\":\"give\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"chi\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"}],\"name\":\"lad\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"cup\",\"type\":\"bytes32\"}],\"name\":\"tab\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"cups\",\"outputs\":[{\"name\":\"lad\",\"type\":\"address\"},{\"name\":\"ink\",\"type\":\"uint256\"},{\"name\":\"art\",\"type\":\"uint256\"},{\"name\":\"ire\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"cupId\",\"type\":\"bytes32\"},{\"name\":\"_cupLad\",\"type\":\"address\"},{\"name\":\"_cupInk\",\"type\":\"uint256\"},{\"name\":\"_cupArt\",\"type\":\"uint256\"},{\"name\":\"_cupIre\",\"type\":\"uint256\"},{\"name\":\"_cupTab\",\"type\":\"uint256\"},{\"name\":\"_uintRap\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol\":\"SaiTub\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol\":{\"keccak256\":\"0xe25781554a0016f05cc49f5ca156f8cf6e663e61d8416cd66af78ad533322baa\",\"urls\":[\"bzzr://29f9c959b13c51d01b853d2c1f78acee27a9b65260e90e890d7852c1aefcd00a\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405160e080610616833981018060405260e081101561003057600080fd5b810190808051906020019092919080519060200190929190805190602001909291908051906020019092919080519060200190929190805190602001909291908051906020019092919050505060405180608001604052808773ffffffffffffffffffffffffffffffffffffffff168152602001868152602001858152602001848152506001600089815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020155606082015181600301559050508160028190555080600381905550505050505050506104c3806101536000396000f3fe608060405234801561001057600080fd5b50600436106100935760003560e01c8063baa8529c11610066578063baa8529c14610158578063c92aecc4146101a6578063de5f5517146101c4578063f7c8d63414610232578063fdac00251461027457610093565b80631f3634ed1461009857806349955431146100da5780636f78ee0d146100f8578063913216df1461013a575b600080fd5b6100c4600480360360208110156100ae57600080fd5b81019080803590602001909291905050506102f7565b6040518082815260200191505060405180910390f35b6100e2610317565b6040518082815260200191505060405180910390f35b6101246004803603602081101561010e57600080fd5b810190808035906020019092919050505061031d565b6040518082815260200191505060405180910390f35b610142610329565b6040518082815260200191505060405180910390f35b6101a46004803603604081101561016e57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061032f565b005b6101ae6103f6565b6040518082815260200191505060405180910390f35b6101f0600480360360208110156101da57600080fd5b81019080803590602001909291905050506103fb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61025e6004803603602081101561024857600080fd5b810190808035906020019092919050505061043b565b6040518082815260200191505060405180910390f35b6102a06004803603602081101561028a57600080fd5b8101908080359060200190929190505050610447565b604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390f35b600060016000838152602001908152602001600020600101549050919050565b60005481565b60006003549050919050565b60025481565b6001600083815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461039d57600080fd5b806001600084815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b600090565b60006001600083815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b60006002549050919050565b60016020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690806001015490806002015490806003015490508456fea165627a7a72305820c7ad4aa733a7a9004a42bafcc3192e8fa7a0cd3003bf9ff8c0ccfa13a72c79fe0029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100935760003560e01c8063baa8529c11610066578063baa8529c14610158578063c92aecc4146101a6578063de5f5517146101c4578063f7c8d63414610232578063fdac00251461027457610093565b80631f3634ed1461009857806349955431146100da5780636f78ee0d146100f8578063913216df1461013a575b600080fd5b6100c4600480360360208110156100ae57600080fd5b81019080803590602001909291905050506102f7565b6040518082815260200191505060405180910390f35b6100e2610317565b6040518082815260200191505060405180910390f35b6101246004803603602081101561010e57600080fd5b810190808035906020019092919050505061031d565b6040518082815260200191505060405180910390f35b610142610329565b6040518082815260200191505060405180910390f35b6101a46004803603604081101561016e57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061032f565b005b6101ae6103f6565b6040518082815260200191505060405180910390f35b6101f0600480360360208110156101da57600080fd5b81019080803590602001909291905050506103fb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61025e6004803603602081101561024857600080fd5b810190808035906020019092919050505061043b565b6040518082815260200191505060405180910390f35b6102a06004803603602081101561028a57600080fd5b8101908080359060200190929190505050610447565b604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390f35b600060016000838152602001908152602001600020600101549050919050565b60005481565b60006003549050919050565b60025481565b6001600083815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461039d57600080fd5b806001600084815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b600090565b60006001600083815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b60006002549050919050565b60016020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690806001015490806002015490806003015490508456fea165627a7a72305820c7ad4aa733a7a9004a42bafcc3192e8fa7a0cd3003bf9ff8c0ccfa13a72c79fe0029",
+  "sourceMap": "25:1577:2:-;;;504:264;8:9:-1;5:2;;;30:1;27;20:12;5:2;504:264:2;;;;;;;;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;504:264:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;665:39;;;;;;;;669:7;665:39;;;;;;678:7;665:39;;;;687:7;665:39;;;;696:7;665:39;;;651:4;:11;656:5;651:11;;;;;;;;;;;:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;725:7;714:8;:18;;;;753:8;742;:19;;;;504:264;;;;;;;25:1577;;;;;;",
+  "deployedSourceMap": "25:1577:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:1577:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1096:90;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1096:90:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;47:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1410:116;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1410:116:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;412:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;774:129;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;774:129:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1532:68;;;:::i;:::-;;;;;;;;;;;;;;;;;;;938:93;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;938:93:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1235:120;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1235:120:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;91:38;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;91:38:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1096:90;1143:4;1166;:9;1171:3;1166:9;;;;;;;;;;;:13;;;1159:20;;1096:90;;;:::o;47:38::-;;;;:::o;1410:116::-;1452:4;1511:8;;1504:15;;1410:116;;;:::o;412:20::-;;;;:::o;774:129::-;853:4;:9;858:3;853:9;;;;;;;;;;;:13;;;;;;;;;;;;839:27;;:10;:27;;;831:36;;;;;;893:3;877:4;:9;882:3;877:9;;;;;;;;;;;:13;;;:19;;;;;;;;;;;;;;;;;;774:129;;:::o;1532:68::-;1563:4;1532:68;:::o;938:93::-;985:7;1011:4;:9;1016:3;1011:9;;;;;;;;;;;:13;;;;;;;;;;;;1004:20;;938:93;;;:::o;1235:120::-;1277:4;1300:8;;1293:15;;1235:120;;;:::o;91:38::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity^0.5.3;\n\n\ncontract SaiTub {\n    uint256                   public  cupi;\n    mapping (bytes32 => Cup)  public  cups;\n\n    struct Cup {\n        address  lad;      // CDP owner\n        uint256  ink;      // Locked collateral (in SKR)\n        uint256  art;      // Outstanding normalised debt (tax only) also called tab in function\n        uint256  ire;      // Outstanding normalised debt\n    }\n\n    uint public tabValue;\n    uint rapValue;\n\n    uint256 _chi;  // Accumulated Tax Rates\n\n\n    constructor(bytes32 cupId, address _cupLad, uint256 _cupInk, uint256 _cupArt, uint256 _cupIre, uint256 _cupTab, uint256 _uintRap) public {\n        cups[cupId] = Cup(_cupLad, _cupInk, _cupArt, _cupIre);\n        tabValue = _cupTab;\n        rapValue = _uintRap;\n    }\n\n    function give(bytes32 cup, address guy) public {\n        require(msg.sender == cups[cup].lad);\n        cups[cup].lad = guy;\n    }\n\n    //get the owner of a cup\n    function lad(bytes32 cup) public view returns (address) {\n        return cups[cup].lad;\n    }\n    \n    //get the amount of skr collateral locked in a cup\n    function ink(bytes32 cup) public view returns (uint) {\n        return cups[cup].ink;\n    }\n    \n    // get the amount of debt in a cup\n    function tab(bytes32 cup) public returns (uint) {\n        return tabValue;\n        // return 50000000000000000000;\n    }\n    // get the amount of governance debt in a cup\n    function rap(bytes32 cup) public returns (uint) {\n        // return 1937914497665704;\n        return rapValue;\n    }\n\n    function chi() public returns (uint) {\n        // return _chi;\n    }\n}",
   "sourcePath": "/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol",
   "ast": {
     "absolutePath": "/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol",
     "exportedSymbols": {
       "SaiTub": [
-        232
+        320
       ]
     },
-    "id": 233,
+    "id": 321,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 133,
+        "id": 184,
         "literals": [
           "solidity",
           "^",
@@ -216,19 +238,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 232,
+        "id": 320,
         "linearizedBaseContracts": [
-          232
+          320
         ],
         "name": "SaiTub",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 135,
+            "id": 186,
             "name": "cupi",
             "nodeType": "VariableDeclaration",
-            "scope": 232,
+            "scope": 320,
             "src": "47:38:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -237,7 +259,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 134,
+              "id": 185,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "47:7:2",
@@ -251,21 +273,21 @@
           },
           {
             "constant": false,
-            "id": 139,
+            "id": 190,
             "name": "cups",
             "nodeType": "VariableDeclaration",
-            "scope": 232,
+            "scope": 320,
             "src": "91:38:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
               "typeString": "mapping(bytes32 => struct SaiTub.Cup)"
             },
             "typeName": {
-              "id": 138,
+              "id": 189,
               "keyType": {
-                "id": 136,
+                "id": 187,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
                 "src": "100:7:2",
@@ -277,18 +299,18 @@
               "nodeType": "Mapping",
               "src": "91:24:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
                 "typeString": "mapping(bytes32 => struct SaiTub.Cup)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 137,
+                "id": 188,
                 "name": "Cup",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 148,
+                "referencedDeclaration": 199,
                 "src": "111:3:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Cup_$148_storage_ptr",
+                  "typeIdentifier": "t_struct$_Cup_$199_storage_ptr",
                   "typeString": "struct SaiTub.Cup"
                 }
               }
@@ -298,14 +320,14 @@
           },
           {
             "canonicalName": "SaiTub.Cup",
-            "id": 148,
+            "id": 199,
             "members": [
               {
                 "constant": false,
-                "id": 141,
+                "id": 192,
                 "name": "lad",
                 "nodeType": "VariableDeclaration",
-                "scope": 148,
+                "scope": 199,
                 "src": "157:12:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -314,7 +336,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 140,
+                  "id": 191,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "157:7:2",
@@ -329,10 +351,10 @@
               },
               {
                 "constant": false,
-                "id": 143,
+                "id": 194,
                 "name": "ink",
                 "nodeType": "VariableDeclaration",
-                "scope": 148,
+                "scope": 199,
                 "src": "197:12:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -341,7 +363,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 142,
+                  "id": 193,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "197:7:2",
@@ -355,10 +377,10 @@
               },
               {
                 "constant": false,
-                "id": 145,
+                "id": 196,
                 "name": "art",
                 "nodeType": "VariableDeclaration",
-                "scope": 148,
+                "scope": 199,
                 "src": "254:12:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -367,7 +389,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 144,
+                  "id": 195,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "254:7:2",
@@ -381,11 +403,11 @@
               },
               {
                 "constant": false,
-                "id": 147,
+                "id": 198,
                 "name": "ire",
                 "nodeType": "VariableDeclaration",
-                "scope": 148,
-                "src": "323:12:2",
+                "scope": 199,
+                "src": "351:12:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -393,10 +415,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 146,
+                  "id": 197,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "323:7:2",
+                  "src": "351:7:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -408,17 +430,17 @@
             ],
             "name": "Cup",
             "nodeType": "StructDefinition",
-            "scope": 232,
-            "src": "136:242:2",
+            "scope": 320,
+            "src": "136:270:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 150,
-            "name": "_chi",
+            "id": 201,
+            "name": "tabValue",
             "nodeType": "VariableDeclaration",
-            "scope": 232,
-            "src": "384:12:2",
+            "scope": 320,
+            "src": "412:20:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -426,10 +448,62 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 149,
+              "id": 200,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "412:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 203,
+            "name": "rapValue",
+            "nodeType": "VariableDeclaration",
+            "scope": 320,
+            "src": "438:13:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 202,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "438:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 205,
+            "name": "_chi",
+            "nodeType": "VariableDeclaration",
+            "scope": 320,
+            "src": "458:12:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 204,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "384:7:2",
+              "src": "458:7:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -440,14 +514,14 @@
           },
           {
             "body": {
-              "id": 174,
+              "id": 241,
               "nodeType": "Block",
-              "src": "532:70:2",
+              "src": "641:127:2",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 172,
+                    "id": 231,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -456,26 +530,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 163,
+                        "id": 222,
                         "name": "cups",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "542:4:2",
+                        "referencedDeclaration": 190,
+                        "src": "651:4:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
                           "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
                         }
                       },
-                      "id": 165,
+                      "id": 224,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 164,
+                        "id": 223,
                         "name": "cupId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 152,
-                        "src": "547:5:2",
+                        "referencedDeclaration": 207,
+                        "src": "656:5:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -486,9 +560,9 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "542:11:2",
+                      "src": "651:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Cup_$148_storage",
+                        "typeIdentifier": "t_struct$_Cup_$199_storage",
                         "typeString": "struct SaiTub.Cup storage ref"
                       }
                     },
@@ -499,12 +573,12 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 167,
+                          "id": 226,
                           "name": "_cupLad",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 154,
-                          "src": "560:7:2",
+                          "referencedDeclaration": 209,
+                          "src": "669:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -512,12 +586,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 168,
+                          "id": 227,
                           "name": "_cupInk",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 156,
-                          "src": "569:7:2",
+                          "referencedDeclaration": 211,
+                          "src": "678:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -525,12 +599,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 169,
+                          "id": 228,
                           "name": "_cupArt",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 158,
-                          "src": "578:7:2",
+                          "referencedDeclaration": 213,
+                          "src": "687:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -538,12 +612,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 170,
+                          "id": 229,
                           "name": "_cupIre",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 160,
-                          "src": "587:7:2",
+                          "referencedDeclaration": 215,
+                          "src": "696:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -569,18 +643,18 @@
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 166,
+                        "id": 225,
                         "name": "Cup",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 148,
-                        "src": "556:3:2",
+                        "referencedDeclaration": 199,
+                        "src": "665:3:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Cup_$148_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Cup_$199_storage_ptr_$",
                           "typeString": "type(struct SaiTub.Cup storage pointer)"
                         }
                       },
-                      "id": 171,
+                      "id": 230,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -588,665 +662,122 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "556:39:2",
+                      "src": "665:39:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Cup_$148_memory",
+                        "typeIdentifier": "t_struct$_Cup_$199_memory",
                         "typeString": "struct SaiTub.Cup memory"
                       }
                     },
-                    "src": "542:53:2",
+                    "src": "651:53:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Cup_$148_storage",
+                      "typeIdentifier": "t_struct$_Cup_$199_storage",
                       "typeString": "struct SaiTub.Cup storage ref"
                     }
                   },
-                  "id": 173,
+                  "id": 232,
                   "nodeType": "ExpressionStatement",
-                  "src": "542:53:2"
+                  "src": "651:53:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 235,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 233,
+                      "name": "tabValue",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 201,
+                      "src": "714:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 234,
+                      "name": "_cupTab",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 217,
+                      "src": "725:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "714:18:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 236,
+                  "nodeType": "ExpressionStatement",
+                  "src": "714:18:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 239,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 237,
+                      "name": "rapValue",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 203,
+                      "src": "742:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 238,
+                      "name": "_uintRap",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 219,
+                      "src": "753:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "742:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 240,
+                  "nodeType": "ExpressionStatement",
+                  "src": "742:19:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 175,
+            "id": 242,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 161,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 152,
-                  "name": "cupId",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "442:13:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 151,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "442:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 154,
-                  "name": "_cupLad",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "457:15:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 153,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "457:7:2",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 156,
-                  "name": "_cupInk",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "474:15:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 155,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "474:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 158,
-                  "name": "_cupArt",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "491:15:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 157,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "491:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 160,
-                  "name": "_cupIre",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "508:15:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 159,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "508:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "441:83:2"
-            },
-            "returnParameters": {
-              "id": 162,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "532:0:2"
-            },
-            "scope": 232,
-            "src": "430:172:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 182,
-              "nodeType": "Block",
-              "src": "655:118:2",
-              "statements": []
-            },
-            "documentation": null,
-            "id": 183,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "give",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 180,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 177,
-                  "name": "cup",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 183,
-                  "src": "622:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 176,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "622:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 179,
-                  "name": "guy",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 183,
-                  "src": "635:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 178,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "635:7:2",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "621:26:2"
-            },
-            "returnParameters": {
-              "id": 181,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "655:0:2"
-            },
-            "scope": 232,
-            "src": "608:165:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 195,
-              "nodeType": "Block",
-              "src": "864:37:2",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "expression": {
-                      "argumentTypes": null,
-                      "baseExpression": {
-                        "argumentTypes": null,
-                        "id": 190,
-                        "name": "cups",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "881:4:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
-                          "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
-                        }
-                      },
-                      "id": 192,
-                      "indexExpression": {
-                        "argumentTypes": null,
-                        "id": 191,
-                        "name": "cup",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 185,
-                        "src": "886:3:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
-                        }
-                      },
-                      "isConstant": false,
-                      "isLValue": true,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "nodeType": "IndexAccess",
-                      "src": "881:9:2",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Cup_$148_storage",
-                        "typeString": "struct SaiTub.Cup storage ref"
-                      }
-                    },
-                    "id": 193,
-                    "isConstant": false,
-                    "isLValue": true,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "memberName": "lad",
-                    "nodeType": "MemberAccess",
-                    "referencedDeclaration": 141,
-                    "src": "881:13:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "functionReturnParameters": 189,
-                  "id": 194,
-                  "nodeType": "Return",
-                  "src": "874:20:2"
-                }
-              ]
-            },
-            "documentation": null,
-            "id": 196,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "lad",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 186,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 185,
-                  "name": "cup",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 196,
-                  "src": "821:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 184,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "821:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "820:13:2"
-            },
-            "returnParameters": {
-              "id": 189,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 188,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 196,
-                  "src": "855:7:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 187,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "855:7:2",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "854:9:2"
-            },
-            "scope": 232,
-            "src": "808:93:2",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 208,
-              "nodeType": "Block",
-              "src": "1019:37:2",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "expression": {
-                      "argumentTypes": null,
-                      "baseExpression": {
-                        "argumentTypes": null,
-                        "id": 203,
-                        "name": "cups",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "1036:4:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
-                          "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
-                        }
-                      },
-                      "id": 205,
-                      "indexExpression": {
-                        "argumentTypes": null,
-                        "id": 204,
-                        "name": "cup",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 198,
-                        "src": "1041:3:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
-                        }
-                      },
-                      "isConstant": false,
-                      "isLValue": true,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "nodeType": "IndexAccess",
-                      "src": "1036:9:2",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Cup_$148_storage",
-                        "typeString": "struct SaiTub.Cup storage ref"
-                      }
-                    },
-                    "id": 206,
-                    "isConstant": false,
-                    "isLValue": true,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "memberName": "ink",
-                    "nodeType": "MemberAccess",
-                    "referencedDeclaration": 143,
-                    "src": "1036:13:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "functionReturnParameters": 202,
-                  "id": 207,
-                  "nodeType": "Return",
-                  "src": "1029:20:2"
-                }
-              ]
-            },
-            "documentation": null,
-            "id": 209,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "ink",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 199,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 198,
-                  "name": "cup",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 209,
-                  "src": "979:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 197,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "979:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "978:13:2"
-            },
-            "returnParameters": {
-              "id": 202,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 201,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 209,
-                  "src": "1013:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 200,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1013:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1012:6:2"
-            },
-            "scope": 232,
-            "src": "966:90:2",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 216,
-              "nodeType": "Block",
-              "src": "1153:53:2",
-              "statements": []
-            },
-            "documentation": null,
-            "id": 217,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "tab",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 212,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 211,
-                  "name": "cup",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 217,
-                  "src": "1118:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 210,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1118:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1117:13:2"
-            },
-            "returnParameters": {
-              "id": 215,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 214,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 217,
-                  "src": "1147:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 213,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1147:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1146:6:2"
-            },
-            "scope": 232,
-            "src": "1105:101:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 224,
-              "nodeType": "Block",
-              "src": "1309:68:2",
-              "statements": []
-            },
-            "documentation": null,
-            "id": 225,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "rap",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 220,
@@ -1254,11 +785,11 @@
               "parameters": [
                 {
                   "constant": false,
-                  "id": 219,
-                  "name": "cup",
+                  "id": 207,
+                  "name": "cupId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 225,
-                  "src": "1274:11:2",
+                  "scope": 242,
+                  "src": "516:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1266,10 +797,613 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 218,
+                    "id": 206,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1274:7:2",
+                    "src": "516:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 209,
+                  "name": "_cupLad",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "531:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 208,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "531:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 211,
+                  "name": "_cupInk",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "548:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 210,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "548:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 213,
+                  "name": "_cupArt",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "565:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 212,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "565:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 215,
+                  "name": "_cupIre",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "582:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 214,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "582:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 217,
+                  "name": "_cupTab",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "599:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 216,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "599:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 219,
+                  "name": "_uintRap",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "616:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 218,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "616:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "515:118:2"
+            },
+            "returnParameters": {
+              "id": 221,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "641:0:2"
+            },
+            "scope": 320,
+            "src": "504:264:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 266,
+              "nodeType": "Block",
+              "src": "821:82:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 256,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 250,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 335,
+                            "src": "839:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 251,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "839:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 252,
+                              "name": "cups",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 190,
+                              "src": "853:4:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
+                                "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
+                              }
+                            },
+                            "id": 254,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 253,
+                              "name": "cup",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 244,
+                              "src": "858:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "853:9:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$199_storage",
+                              "typeString": "struct SaiTub.Cup storage ref"
+                            }
+                          },
+                          "id": 255,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "lad",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 192,
+                          "src": "853:13:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "839:27:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 249,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        338,
+                        339
+                      ],
+                      "referencedDeclaration": 338,
+                      "src": "831:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "831:36:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 258,
+                  "nodeType": "ExpressionStatement",
+                  "src": "831:36:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 264,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 259,
+                          "name": "cups",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 190,
+                          "src": "877:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
+                            "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
+                          }
+                        },
+                        "id": 261,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 260,
+                          "name": "cup",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 244,
+                          "src": "882:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "877:9:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Cup_$199_storage",
+                          "typeString": "struct SaiTub.Cup storage ref"
+                        }
+                      },
+                      "id": 262,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "lad",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 192,
+                      "src": "877:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 263,
+                      "name": "guy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 246,
+                      "src": "893:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "877:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 265,
+                  "nodeType": "ExpressionStatement",
+                  "src": "877:19:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 267,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "give",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 247,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 244,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 267,
+                  "src": "788:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 243,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "788:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 246,
+                  "name": "guy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 267,
+                  "src": "801:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 245,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "801:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "787:26:2"
+            },
+            "returnParameters": {
+              "id": 248,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "821:0:2"
+            },
+            "scope": 320,
+            "src": "774:129:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 279,
+              "nodeType": "Block",
+              "src": "994:37:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 274,
+                        "name": "cups",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 190,
+                        "src": "1011:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
+                          "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
+                        }
+                      },
+                      "id": 276,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 275,
+                        "name": "cup",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 269,
+                        "src": "1016:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1011:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Cup_$199_storage",
+                        "typeString": "struct SaiTub.Cup storage ref"
+                      }
+                    },
+                    "id": 277,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "lad",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 192,
+                    "src": "1011:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 273,
+                  "id": 278,
+                  "nodeType": "Return",
+                  "src": "1004:20:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 280,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lad",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 270,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 269,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 280,
+                  "src": "951:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 268,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "951:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1279,19 +1413,169 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1273:13:2"
+              "src": "950:13:2"
             },
             "returnParameters": {
-              "id": 223,
+              "id": 273,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 222,
+                  "id": 272,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 225,
-                  "src": "1303:4:2",
+                  "scope": 280,
+                  "src": "985:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 271,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "985:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "984:9:2"
+            },
+            "scope": 320,
+            "src": "938:93:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 292,
+              "nodeType": "Block",
+              "src": "1149:37:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 287,
+                        "name": "cups",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 190,
+                        "src": "1166:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
+                          "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
+                        }
+                      },
+                      "id": 289,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 288,
+                        "name": "cup",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 282,
+                        "src": "1171:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1166:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Cup_$199_storage",
+                        "typeString": "struct SaiTub.Cup storage ref"
+                      }
+                    },
+                    "id": 290,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "ink",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 194,
+                    "src": "1166:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 286,
+                  "id": 291,
+                  "nodeType": "Return",
+                  "src": "1159:20:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 293,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ink",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 283,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 282,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 293,
+                  "src": "1109:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 281,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1109:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1108:13:2"
+            },
+            "returnParameters": {
+              "id": 286,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 285,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 293,
+                  "src": "1143:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1299,10 +1583,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 221,
+                    "id": 284,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1303:4:2",
+                    "src": "1143:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1312,45 +1596,198 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1302:6:2"
+              "src": "1142:6:2"
             },
-            "scope": 232,
-            "src": "1261:116:2",
+            "scope": 320,
+            "src": "1096:90:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 302,
+              "nodeType": "Block",
+              "src": "1283:72:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 300,
+                    "name": "tabValue",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 201,
+                    "src": "1300:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 299,
+                  "id": 301,
+                  "nodeType": "Return",
+                  "src": "1293:15:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 303,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tab",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 295,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 303,
+                  "src": "1248:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 294,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1248:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1247:13:2"
+            },
+            "returnParameters": {
+              "id": 299,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 298,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 303,
+                  "src": "1277:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 297,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1277:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1276:6:2"
+            },
+            "scope": 320,
+            "src": "1235:120:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 230,
+              "id": 312,
               "nodeType": "Block",
-              "src": "1420:31:2",
-              "statements": []
+              "src": "1458:68:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 310,
+                    "name": "rapValue",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 203,
+                    "src": "1511:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 309,
+                  "id": 311,
+                  "nodeType": "Return",
+                  "src": "1504:15:2"
+                }
+              ]
             },
             "documentation": null,
-            "id": 231,
+            "id": 313,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "chi",
+            "name": "rap",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 226,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1395:2:2"
-            },
-            "returnParameters": {
-              "id": 229,
+              "id": 306,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 228,
+                  "id": 305,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 313,
+                  "src": "1423:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 304,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1423:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1422:13:2"
+            },
+            "returnParameters": {
+              "id": 309,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 308,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 231,
-                  "src": "1414:4:2",
+                  "scope": 313,
+                  "src": "1452:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1358,10 +1795,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 227,
+                    "id": 307,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1414:4:2",
+                    "src": "1452:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1371,33 +1808,92 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1413:6:2"
+              "src": "1451:6:2"
             },
-            "scope": 232,
-            "src": "1383:68:2",
+            "scope": 320,
+            "src": "1410:116:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 318,
+              "nodeType": "Block",
+              "src": "1569:31:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 319,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "chi",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 314,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1544:2:2"
+            },
+            "returnParameters": {
+              "id": 317,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 316,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 319,
+                  "src": "1563:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 315,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1563:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1562:6:2"
+            },
+            "scope": 320,
+            "src": "1532:68:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 233,
-        "src": "25:1428:2"
+        "scope": 321,
+        "src": "25:1577:2"
       }
     ],
-    "src": "0:1453:2"
+    "src": "0:1602:2"
   },
   "legacyAST": {
     "absolutePath": "/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol",
     "exportedSymbols": {
       "SaiTub": [
-        232
+        320
       ]
     },
-    "id": 233,
+    "id": 321,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 133,
+        "id": 184,
         "literals": [
           "solidity",
           "^",
@@ -1413,19 +1909,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 232,
+        "id": 320,
         "linearizedBaseContracts": [
-          232
+          320
         ],
         "name": "SaiTub",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 135,
+            "id": 186,
             "name": "cupi",
             "nodeType": "VariableDeclaration",
-            "scope": 232,
+            "scope": 320,
             "src": "47:38:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1434,7 +1930,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 134,
+              "id": 185,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "47:7:2",
@@ -1448,21 +1944,21 @@
           },
           {
             "constant": false,
-            "id": 139,
+            "id": 190,
             "name": "cups",
             "nodeType": "VariableDeclaration",
-            "scope": 232,
+            "scope": 320,
             "src": "91:38:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
               "typeString": "mapping(bytes32 => struct SaiTub.Cup)"
             },
             "typeName": {
-              "id": 138,
+              "id": 189,
               "keyType": {
-                "id": 136,
+                "id": 187,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
                 "src": "100:7:2",
@@ -1474,18 +1970,18 @@
               "nodeType": "Mapping",
               "src": "91:24:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
                 "typeString": "mapping(bytes32 => struct SaiTub.Cup)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 137,
+                "id": 188,
                 "name": "Cup",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 148,
+                "referencedDeclaration": 199,
                 "src": "111:3:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Cup_$148_storage_ptr",
+                  "typeIdentifier": "t_struct$_Cup_$199_storage_ptr",
                   "typeString": "struct SaiTub.Cup"
                 }
               }
@@ -1495,14 +1991,14 @@
           },
           {
             "canonicalName": "SaiTub.Cup",
-            "id": 148,
+            "id": 199,
             "members": [
               {
                 "constant": false,
-                "id": 141,
+                "id": 192,
                 "name": "lad",
                 "nodeType": "VariableDeclaration",
-                "scope": 148,
+                "scope": 199,
                 "src": "157:12:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1511,7 +2007,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 140,
+                  "id": 191,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "157:7:2",
@@ -1526,10 +2022,10 @@
               },
               {
                 "constant": false,
-                "id": 143,
+                "id": 194,
                 "name": "ink",
                 "nodeType": "VariableDeclaration",
-                "scope": 148,
+                "scope": 199,
                 "src": "197:12:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1538,7 +2034,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 142,
+                  "id": 193,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "197:7:2",
@@ -1552,10 +2048,10 @@
               },
               {
                 "constant": false,
-                "id": 145,
+                "id": 196,
                 "name": "art",
                 "nodeType": "VariableDeclaration",
-                "scope": 148,
+                "scope": 199,
                 "src": "254:12:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1564,7 +2060,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 144,
+                  "id": 195,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "254:7:2",
@@ -1578,11 +2074,11 @@
               },
               {
                 "constant": false,
-                "id": 147,
+                "id": 198,
                 "name": "ire",
                 "nodeType": "VariableDeclaration",
-                "scope": 148,
-                "src": "323:12:2",
+                "scope": 199,
+                "src": "351:12:2",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1590,10 +2086,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 146,
+                  "id": 197,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "323:7:2",
+                  "src": "351:7:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1605,17 +2101,17 @@
             ],
             "name": "Cup",
             "nodeType": "StructDefinition",
-            "scope": 232,
-            "src": "136:242:2",
+            "scope": 320,
+            "src": "136:270:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 150,
-            "name": "_chi",
+            "id": 201,
+            "name": "tabValue",
             "nodeType": "VariableDeclaration",
-            "scope": 232,
-            "src": "384:12:2",
+            "scope": 320,
+            "src": "412:20:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1623,10 +2119,62 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 149,
+              "id": 200,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "412:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 203,
+            "name": "rapValue",
+            "nodeType": "VariableDeclaration",
+            "scope": 320,
+            "src": "438:13:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 202,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "438:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 205,
+            "name": "_chi",
+            "nodeType": "VariableDeclaration",
+            "scope": 320,
+            "src": "458:12:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 204,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "384:7:2",
+              "src": "458:7:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1637,14 +2185,14 @@
           },
           {
             "body": {
-              "id": 174,
+              "id": 241,
               "nodeType": "Block",
-              "src": "532:70:2",
+              "src": "641:127:2",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 172,
+                    "id": 231,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1653,26 +2201,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 163,
+                        "id": 222,
                         "name": "cups",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "542:4:2",
+                        "referencedDeclaration": 190,
+                        "src": "651:4:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
                           "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
                         }
                       },
-                      "id": 165,
+                      "id": 224,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 164,
+                        "id": 223,
                         "name": "cupId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 152,
-                        "src": "547:5:2",
+                        "referencedDeclaration": 207,
+                        "src": "656:5:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1683,9 +2231,9 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "542:11:2",
+                      "src": "651:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Cup_$148_storage",
+                        "typeIdentifier": "t_struct$_Cup_$199_storage",
                         "typeString": "struct SaiTub.Cup storage ref"
                       }
                     },
@@ -1696,12 +2244,12 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 167,
+                          "id": 226,
                           "name": "_cupLad",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 154,
-                          "src": "560:7:2",
+                          "referencedDeclaration": 209,
+                          "src": "669:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1709,12 +2257,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 168,
+                          "id": 227,
                           "name": "_cupInk",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 156,
-                          "src": "569:7:2",
+                          "referencedDeclaration": 211,
+                          "src": "678:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1722,12 +2270,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 169,
+                          "id": 228,
                           "name": "_cupArt",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 158,
-                          "src": "578:7:2",
+                          "referencedDeclaration": 213,
+                          "src": "687:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1735,12 +2283,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 170,
+                          "id": 229,
                           "name": "_cupIre",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 160,
-                          "src": "587:7:2",
+                          "referencedDeclaration": 215,
+                          "src": "696:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1766,18 +2314,18 @@
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 166,
+                        "id": 225,
                         "name": "Cup",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 148,
-                        "src": "556:3:2",
+                        "referencedDeclaration": 199,
+                        "src": "665:3:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Cup_$148_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Cup_$199_storage_ptr_$",
                           "typeString": "type(struct SaiTub.Cup storage pointer)"
                         }
                       },
-                      "id": 171,
+                      "id": 230,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1785,665 +2333,122 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "556:39:2",
+                      "src": "665:39:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Cup_$148_memory",
+                        "typeIdentifier": "t_struct$_Cup_$199_memory",
                         "typeString": "struct SaiTub.Cup memory"
                       }
                     },
-                    "src": "542:53:2",
+                    "src": "651:53:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Cup_$148_storage",
+                      "typeIdentifier": "t_struct$_Cup_$199_storage",
                       "typeString": "struct SaiTub.Cup storage ref"
                     }
                   },
-                  "id": 173,
+                  "id": 232,
                   "nodeType": "ExpressionStatement",
-                  "src": "542:53:2"
+                  "src": "651:53:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 235,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 233,
+                      "name": "tabValue",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 201,
+                      "src": "714:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 234,
+                      "name": "_cupTab",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 217,
+                      "src": "725:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "714:18:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 236,
+                  "nodeType": "ExpressionStatement",
+                  "src": "714:18:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 239,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 237,
+                      "name": "rapValue",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 203,
+                      "src": "742:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 238,
+                      "name": "_uintRap",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 219,
+                      "src": "753:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "742:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 240,
+                  "nodeType": "ExpressionStatement",
+                  "src": "742:19:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 175,
+            "id": 242,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 161,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 152,
-                  "name": "cupId",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "442:13:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 151,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "442:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 154,
-                  "name": "_cupLad",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "457:15:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 153,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "457:7:2",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 156,
-                  "name": "_cupInk",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "474:15:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 155,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "474:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 158,
-                  "name": "_cupArt",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "491:15:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 157,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "491:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 160,
-                  "name": "_cupIre",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 175,
-                  "src": "508:15:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 159,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "508:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "441:83:2"
-            },
-            "returnParameters": {
-              "id": 162,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "532:0:2"
-            },
-            "scope": 232,
-            "src": "430:172:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 182,
-              "nodeType": "Block",
-              "src": "655:118:2",
-              "statements": []
-            },
-            "documentation": null,
-            "id": 183,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "give",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 180,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 177,
-                  "name": "cup",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 183,
-                  "src": "622:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 176,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "622:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 179,
-                  "name": "guy",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 183,
-                  "src": "635:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 178,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "635:7:2",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "621:26:2"
-            },
-            "returnParameters": {
-              "id": 181,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "655:0:2"
-            },
-            "scope": 232,
-            "src": "608:165:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 195,
-              "nodeType": "Block",
-              "src": "864:37:2",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "expression": {
-                      "argumentTypes": null,
-                      "baseExpression": {
-                        "argumentTypes": null,
-                        "id": 190,
-                        "name": "cups",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "881:4:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
-                          "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
-                        }
-                      },
-                      "id": 192,
-                      "indexExpression": {
-                        "argumentTypes": null,
-                        "id": 191,
-                        "name": "cup",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 185,
-                        "src": "886:3:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
-                        }
-                      },
-                      "isConstant": false,
-                      "isLValue": true,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "nodeType": "IndexAccess",
-                      "src": "881:9:2",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Cup_$148_storage",
-                        "typeString": "struct SaiTub.Cup storage ref"
-                      }
-                    },
-                    "id": 193,
-                    "isConstant": false,
-                    "isLValue": true,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "memberName": "lad",
-                    "nodeType": "MemberAccess",
-                    "referencedDeclaration": 141,
-                    "src": "881:13:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "functionReturnParameters": 189,
-                  "id": 194,
-                  "nodeType": "Return",
-                  "src": "874:20:2"
-                }
-              ]
-            },
-            "documentation": null,
-            "id": 196,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "lad",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 186,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 185,
-                  "name": "cup",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 196,
-                  "src": "821:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 184,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "821:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "820:13:2"
-            },
-            "returnParameters": {
-              "id": 189,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 188,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 196,
-                  "src": "855:7:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 187,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "855:7:2",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "854:9:2"
-            },
-            "scope": 232,
-            "src": "808:93:2",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 208,
-              "nodeType": "Block",
-              "src": "1019:37:2",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "expression": {
-                      "argumentTypes": null,
-                      "baseExpression": {
-                        "argumentTypes": null,
-                        "id": 203,
-                        "name": "cups",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 139,
-                        "src": "1036:4:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$148_storage_$",
-                          "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
-                        }
-                      },
-                      "id": 205,
-                      "indexExpression": {
-                        "argumentTypes": null,
-                        "id": 204,
-                        "name": "cup",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 198,
-                        "src": "1041:3:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
-                        }
-                      },
-                      "isConstant": false,
-                      "isLValue": true,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "nodeType": "IndexAccess",
-                      "src": "1036:9:2",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Cup_$148_storage",
-                        "typeString": "struct SaiTub.Cup storage ref"
-                      }
-                    },
-                    "id": 206,
-                    "isConstant": false,
-                    "isLValue": true,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "memberName": "ink",
-                    "nodeType": "MemberAccess",
-                    "referencedDeclaration": 143,
-                    "src": "1036:13:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "functionReturnParameters": 202,
-                  "id": 207,
-                  "nodeType": "Return",
-                  "src": "1029:20:2"
-                }
-              ]
-            },
-            "documentation": null,
-            "id": 209,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "ink",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 199,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 198,
-                  "name": "cup",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 209,
-                  "src": "979:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 197,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "979:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "978:13:2"
-            },
-            "returnParameters": {
-              "id": 202,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 201,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 209,
-                  "src": "1013:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 200,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1013:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1012:6:2"
-            },
-            "scope": 232,
-            "src": "966:90:2",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 216,
-              "nodeType": "Block",
-              "src": "1153:53:2",
-              "statements": []
-            },
-            "documentation": null,
-            "id": 217,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "tab",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 212,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 211,
-                  "name": "cup",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 217,
-                  "src": "1118:11:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 210,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1118:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1117:13:2"
-            },
-            "returnParameters": {
-              "id": 215,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 214,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 217,
-                  "src": "1147:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 213,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1147:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "1146:6:2"
-            },
-            "scope": 232,
-            "src": "1105:101:2",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 224,
-              "nodeType": "Block",
-              "src": "1309:68:2",
-              "statements": []
-            },
-            "documentation": null,
-            "id": 225,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "rap",
             "nodeType": "FunctionDefinition",
             "parameters": {
               "id": 220,
@@ -2451,11 +2456,11 @@
               "parameters": [
                 {
                   "constant": false,
-                  "id": 219,
-                  "name": "cup",
+                  "id": 207,
+                  "name": "cupId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 225,
-                  "src": "1274:11:2",
+                  "scope": 242,
+                  "src": "516:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2463,10 +2468,613 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 218,
+                    "id": 206,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1274:7:2",
+                    "src": "516:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 209,
+                  "name": "_cupLad",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "531:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 208,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "531:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 211,
+                  "name": "_cupInk",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "548:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 210,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "548:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 213,
+                  "name": "_cupArt",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "565:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 212,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "565:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 215,
+                  "name": "_cupIre",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "582:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 214,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "582:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 217,
+                  "name": "_cupTab",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "599:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 216,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "599:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 219,
+                  "name": "_uintRap",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 242,
+                  "src": "616:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 218,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "616:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "515:118:2"
+            },
+            "returnParameters": {
+              "id": 221,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "641:0:2"
+            },
+            "scope": 320,
+            "src": "504:264:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 266,
+              "nodeType": "Block",
+              "src": "821:82:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 256,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 250,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 335,
+                            "src": "839:3:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 251,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "839:10:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 252,
+                              "name": "cups",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 190,
+                              "src": "853:4:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
+                                "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
+                              }
+                            },
+                            "id": 254,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 253,
+                              "name": "cup",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 244,
+                              "src": "858:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "853:9:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$199_storage",
+                              "typeString": "struct SaiTub.Cup storage ref"
+                            }
+                          },
+                          "id": 255,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "lad",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 192,
+                          "src": "853:13:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "839:27:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 249,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        338,
+                        339
+                      ],
+                      "referencedDeclaration": 338,
+                      "src": "831:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "831:36:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 258,
+                  "nodeType": "ExpressionStatement",
+                  "src": "831:36:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 264,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 259,
+                          "name": "cups",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 190,
+                          "src": "877:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
+                            "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
+                          }
+                        },
+                        "id": 261,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 260,
+                          "name": "cup",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 244,
+                          "src": "882:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "877:9:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Cup_$199_storage",
+                          "typeString": "struct SaiTub.Cup storage ref"
+                        }
+                      },
+                      "id": 262,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "lad",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 192,
+                      "src": "877:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 263,
+                      "name": "guy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 246,
+                      "src": "893:3:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "877:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 265,
+                  "nodeType": "ExpressionStatement",
+                  "src": "877:19:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 267,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "give",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 247,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 244,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 267,
+                  "src": "788:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 243,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "788:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 246,
+                  "name": "guy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 267,
+                  "src": "801:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 245,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "801:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "787:26:2"
+            },
+            "returnParameters": {
+              "id": 248,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "821:0:2"
+            },
+            "scope": 320,
+            "src": "774:129:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 279,
+              "nodeType": "Block",
+              "src": "994:37:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 274,
+                        "name": "cups",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 190,
+                        "src": "1011:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
+                          "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
+                        }
+                      },
+                      "id": 276,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 275,
+                        "name": "cup",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 269,
+                        "src": "1016:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1011:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Cup_$199_storage",
+                        "typeString": "struct SaiTub.Cup storage ref"
+                      }
+                    },
+                    "id": 277,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "lad",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 192,
+                    "src": "1011:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 273,
+                  "id": 278,
+                  "nodeType": "Return",
+                  "src": "1004:20:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 280,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lad",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 270,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 269,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 280,
+                  "src": "951:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 268,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "951:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2476,19 +3084,169 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1273:13:2"
+              "src": "950:13:2"
             },
             "returnParameters": {
-              "id": 223,
+              "id": 273,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 222,
+                  "id": 272,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 225,
-                  "src": "1303:4:2",
+                  "scope": 280,
+                  "src": "985:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 271,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "985:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "984:9:2"
+            },
+            "scope": 320,
+            "src": "938:93:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 292,
+              "nodeType": "Block",
+              "src": "1149:37:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 287,
+                        "name": "cups",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 190,
+                        "src": "1166:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Cup_$199_storage_$",
+                          "typeString": "mapping(bytes32 => struct SaiTub.Cup storage ref)"
+                        }
+                      },
+                      "id": 289,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 288,
+                        "name": "cup",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 282,
+                        "src": "1171:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1166:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Cup_$199_storage",
+                        "typeString": "struct SaiTub.Cup storage ref"
+                      }
+                    },
+                    "id": 290,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "ink",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 194,
+                    "src": "1166:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 286,
+                  "id": 291,
+                  "nodeType": "Return",
+                  "src": "1159:20:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 293,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ink",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 283,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 282,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 293,
+                  "src": "1109:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 281,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1109:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1108:13:2"
+            },
+            "returnParameters": {
+              "id": 286,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 285,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 293,
+                  "src": "1143:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2496,10 +3254,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 221,
+                    "id": 284,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1303:4:2",
+                    "src": "1143:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2509,45 +3267,198 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1302:6:2"
+              "src": "1142:6:2"
             },
-            "scope": 232,
-            "src": "1261:116:2",
+            "scope": 320,
+            "src": "1096:90:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 302,
+              "nodeType": "Block",
+              "src": "1283:72:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 300,
+                    "name": "tabValue",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 201,
+                    "src": "1300:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 299,
+                  "id": 301,
+                  "nodeType": "Return",
+                  "src": "1293:15:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 303,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tab",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 295,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 303,
+                  "src": "1248:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 294,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1248:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1247:13:2"
+            },
+            "returnParameters": {
+              "id": 299,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 298,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 303,
+                  "src": "1277:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 297,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1277:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1276:6:2"
+            },
+            "scope": 320,
+            "src": "1235:120:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 230,
+              "id": 312,
               "nodeType": "Block",
-              "src": "1420:31:2",
-              "statements": []
+              "src": "1458:68:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 310,
+                    "name": "rapValue",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 203,
+                    "src": "1511:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 309,
+                  "id": 311,
+                  "nodeType": "Return",
+                  "src": "1504:15:2"
+                }
+              ]
             },
             "documentation": null,
-            "id": 231,
+            "id": 313,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "chi",
+            "name": "rap",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 226,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1395:2:2"
-            },
-            "returnParameters": {
-              "id": 229,
+              "id": 306,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 228,
+                  "id": 305,
+                  "name": "cup",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 313,
+                  "src": "1423:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 304,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1423:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1422:13:2"
+            },
+            "returnParameters": {
+              "id": 309,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 308,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 231,
-                  "src": "1414:4:2",
+                  "scope": 313,
+                  "src": "1452:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2555,10 +3466,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 227,
+                    "id": 307,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1414:4:2",
+                    "src": "1452:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2568,20 +3479,79 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1413:6:2"
+              "src": "1451:6:2"
             },
-            "scope": 232,
-            "src": "1383:68:2",
+            "scope": 320,
+            "src": "1410:116:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 318,
+              "nodeType": "Block",
+              "src": "1569:31:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 319,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "chi",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 314,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1544:2:2"
+            },
+            "returnParameters": {
+              "id": 317,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 316,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 319,
+                  "src": "1563:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 315,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1563:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1562:6:2"
+            },
+            "scope": 320,
+            "src": "1532:68:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 233,
-        "src": "25:1428:2"
+        "scope": 321,
+        "src": "25:1577:2"
       }
     ],
-    "src": "0:1453:2"
+    "src": "0:1602:2"
   },
   "compiler": {
     "name": "solc",
@@ -2589,7 +3559,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.16",
-  "updatedAt": "2019-10-19T13:57:17.082Z",
+  "updatedAt": "2019-10-19T15:35:11.650Z",
   "devdoc": {
     "methods": {}
   },

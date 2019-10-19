@@ -17,6 +17,7 @@ contract SaiTub {
 
     uint256 _chi;  // Accumulated Tax Rates
 
+    event log(string log);
 
     constructor(bytes32 cupId, address _cupLad, uint256 _cupInk, uint256 _cupArt, uint256 _cupIre, uint256 _cupTab, uint256 _uintRap) public {
         cups[cupId] = Cup(_cupLad, _cupInk, _cupArt, _cupIre);
@@ -25,9 +26,9 @@ contract SaiTub {
     }
 
     function give(bytes32 cup, address guy) public {
-        // require(msg.sender == cups[cup].lad);
-        // require(guy != 0);
-        // cups[cup].lad = guy;
+        emit log("Hit it boi");
+        require(msg.sender == cups[cup].lad);
+        cups[cup].lad = guy;
     }
 
     //get the owner of a cup
