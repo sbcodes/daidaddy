@@ -86,27 +86,70 @@ contract("DaiDaddy", ([contractOwner, seller, buyer, random]) => {
     context("Buy CDP from DaiDaddy", function () {
         it("Correctly enables sale if value is correct", async function () {
 
-            let cupLad = await this.saiTub.lad(cupId)
-            assert.equal(cupLad, seller, "Did not correctly init cup")
+                let cupLad = await this.saiTub.lad(cupId)
+                assert.equal(cupLad, seller, "Did not correctly init cup")
 
+                await this.daiDaddy.sellCDP(cupId, discount, {
+                    from: seller
+                })
+
+                cupLad = await this.saiTub.lad(cupId)
+                assert.equal(cupLad, this.daiDaddy.address, "Did not correctly transfer from seller to daiDaddy")
+
+
+                let buyPrice = await this.daiDaddy.debtPositionPriceInEth.call(0)
+                await this.daiDaddy.buyCDP(0, {
+                    from: buyer,
+                    value: buyPrice
+                })
+
+                cupLad = await this.saiTub.lad(cupId)
+                assert.equal(cupLad, buyer, "Did not correctly transfer from daiDaddy to buyer")
+            }),
+            it("Reverts if wrong amount of ether sent", async function () {
+                await this.daiDaddy.sellCDP(cupId, discount, {
+                    from: seller
+                })
+
+                await expectRevert.unspecified(
+                    this.daiDaddy.buyCDP(0, {
+                        from: buyer,
+                        value: 10000
+                    })
+                );
+            })
+    })
+    context("Cancel sell order", function () {
+        it("Can cancel if in correct state", async function () {
             await this.daiDaddy.sellCDP(cupId, discount, {
                 from: seller
             })
 
-            cupLad = await this.saiTub.lad(cupId)
-            assert.equal(cupLad, this.daiDaddy.address, "Did not correctly transfer from seller to daiDaddy")
-
-
-            let buyPrice = await this.daiDaddy.debtPositionPriceInEth.call(0)
-            console.log("price", buyPrice.toString(10))
-
-            await this.daiDaddy.buyCDP(0, {
-                from: buyer,
-                value: buyPrice
+            await this.daiDaddy.cancelCDPSale(0, {
+                from: seller
+            })
+        })
+        it("Revert if not your sell order", async function () {
+            await this.daiDaddy.sellCDP(cupId, discount, {
+                from: seller
+            })
+            await expectRevert.unspecified(this.daiDaddy.cancelCDPSale(0, {
+                from: random
+            }))
+        })
+        it("Revert if in wrong state", async function () {
+            await this.daiDaddy.sellCDP(cupId, discount, {
+                from: seller
+            })
+            //do the sell first
+            await this.daiDaddy.cancelCDPSale(0, {
+                from: seller
             })
 
-            cupLad = await this.saiTub.lad(cupId)
-            assert.equal(cupLad, buyer, "Did not correctly transfer from daiDaddy to buyer")
+            //try again
+            await expectRevert.unspecified(this.daiDaddy.cancelCDPSale(0, {
+                from: random
+            }))
         })
     })
 })
