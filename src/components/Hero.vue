@@ -1,10 +1,10 @@
 <template>
   <div class="hero">
     <a-row class="hero-row" justify="center" align="middle" type="flex">
-      <a-col :md="14" :span="24" type="flex" justify="center">
+      <a-col class="logo-col" :md="14" :span="24" justify="center">
         <Logo size="large" />
       </a-col>
-      <a-col :md="10" :span="24" type="flex">
+      <a-col :md="10" :span="24">
         <Messages />
       </a-col>
     </a-row>
@@ -20,10 +20,16 @@ export default {
 <style scoped lang="scss">
 .hero {
   background-image: linear-gradient(#ff94ce, #fff);
+  padding: 24px;
 }
 
 .hero-row {
   height: 100vh;
-  background-image: linear-gradient(#ff94ce, #fff);
+  width: 100%;
+}
+
+.logo-col {
+  display: flex;
+  justify-content: center;
 }
 </style>
