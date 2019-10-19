@@ -6,7 +6,6 @@
         <img src="img/HowitworksMichaelBoxes.png" class="hiw-michael">
         <router-link class="ant-btn" to="/sell">Sell</router-link>
         <router-link class="ant-btn" to="/buy">Buy</router-link>
-        <!-- <router-link class="nav-link" to="/">Home</router-link> -->
     </a-row>
 </template>
 
@@ -36,6 +35,7 @@ export default {
         max-width: 80%;
         height: auto;
         object-fit: contain;
+        z-index: -1;
     }
 
 </style>
