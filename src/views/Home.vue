@@ -3,6 +3,7 @@
     
     <Hero />
     <SellYourCDP />
+    <HowItWorks />
   </div>
 </template>
 
