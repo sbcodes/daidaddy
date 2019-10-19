@@ -28,6 +28,10 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <div class="messages">
+      <MessageBubble msgType="to" msg="hahaepic"></MessageBubble>
+      <MessageBubble msgType="from" msg="yes very xd"></MessageBubble>
+    </div>
   </div>
 </template>
 
@@ -55,5 +59,13 @@ li {
 }
 a {
   color: #42b983;
+}
+.messages{
+	font-size: 20px;
+	font-weight: normal;
+  max-width: 450px;
+	margin: 50px auto;
+  display: flex;
+  flex-direction: column;
 }
 </style>
