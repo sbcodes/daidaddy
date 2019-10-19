@@ -2,6 +2,7 @@
   <div class="home">
     
     <Hero />
+    <SellYourCDP />
   </div>
 </template>
 
