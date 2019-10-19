@@ -9,10 +9,7 @@
                     <router-link to="/">Home</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/buy">Buy</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/sell">Sell</router-link>
+                    <router-link to="/market">Market</router-link>
                 </li>
             </ul>
         </a-col>
@@ -21,6 +18,9 @@
                 <li class="nav-item">
                     <router-link to="/listing">Listing</router-link>
                 </li>
+                <!-- <li class="nav-item">
+                    metamask placeholder spot
+                </li> -->
             </ul>
         </a-col>
     </a-row>

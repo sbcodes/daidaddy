@@ -1,18 +1,17 @@
 <template>
   <div>
-    <h1>Sell your debt</h1>
-    <ListCDPs />
+    <SellCDP />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ListCDPs from "@/components/ListCDPs.vue";
+import SellCDP from "@/components/SellCDP.vue";
 
 export default {
   name: "home",
   components: {
-    ListCDPs
+    SellCDP
   }
 };
 </script>
