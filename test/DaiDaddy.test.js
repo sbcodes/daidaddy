@@ -107,8 +107,6 @@ contract("DaiDaddy", ([contractOwner, seller, buyer, random]) => {
 
             cupLad = await this.saiTub.lad(cupId)
             assert.equal(cupLad, buyer, "Did not correctly transfer from daiDaddy to buyer")
-
         })
     })
-
 })
