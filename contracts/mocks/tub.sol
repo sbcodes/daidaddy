@@ -26,8 +26,7 @@ contract SaiTub {
     }
 
     function give(bytes32 cup, address guy) public {
-        emit log("Hit it boi");
-        require(msg.sender == cups[cup].lad);
+        // require(msg.sender == cups[cup].lad);
         cups[cup].lad = guy;
     }
 
