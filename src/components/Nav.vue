@@ -1,11 +1,29 @@
 <template>
-    <div class="nav">
-        <Logo />
-        <p class="left">Home</p>
-        <p class="left">Market</p>
-        <p class="right">Listing</p>
-        <!-- metamask placeholder spot-->
-    </div>
+    <a-row type="flex" align="center">
+        <a-col :span="12">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <Logo size="small" />
+                </li>
+                <li class="nav-item">
+                    <router-link to="/">Home</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link to="/market">Market</router-link>
+                </li>
+            </ul>
+        </a-col>
+        <a-col :span="12">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <router-link to="/listing">Listing</router-link>
+                </li>
+                <!-- <li class="nav-item">
+                    metamask placeholder spot
+                </li> -->
+            </ul>
+        </a-col>
+    </a-row>
 </template>
 
 <script>
@@ -16,27 +34,26 @@ export default {
 
 <style scoped lang="scss">
     .nav{
-        padding: 36px 76px;
-    }
-    .left{
-        padding: 48px 76px;
-        font-family: Nunito;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 25px;
-        display: flex;
-    }
-    .right{
-        padding: 48px 76px;
-        float: right;
-        font-family: Nunito;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 25px;
+        padding: 0px 80px;
+        box-sizing: border-box;
         display: flex;
         align-items: center;
-        text-align: right;
+        font-size: .9rem;
+    }
+
+    .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        display: inline-block;
+        margin-right: 2.25rem;
+    }
+
+    .nav-item {
+        display: inline-block;
+        margin-right: 2.25rem;
     }
 </style>
