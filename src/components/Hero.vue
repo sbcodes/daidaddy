@@ -2,7 +2,7 @@
   <div class="hero">
     <a-row class="hero-row" justify="center" align="middle" type="flex">
       <a-col :md="14" :span="24" type="flex" justify="center">
-        <Logo isLarge />
+        <Logo isLarge="large" />
       </a-col>
       <a-col :md="10" :span="24" type="flex">
         <Messages />
