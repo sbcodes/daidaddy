@@ -1,11 +1,11 @@
 <template>
-  <div v-bind:class="isLarge">$DAI daddy</div>
+  <div v-bind:class="size">$DAI daddy</div>
 </template>
 
 <script>
 export default {
   name: "Logo",
-  props: { isLarge: { type: String, default: "small" } }
+  props: { size: { type: String, default: "small" } }
 };
 </script>
 
