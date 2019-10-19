@@ -1,11 +1,8 @@
 <template>
   <div id="app">
-    <router-link to="/">Home</router-link>|
-    <router-link to="/about">About</router-link>|
-    <router-link to="/selldebt">Sell Debt</router-link>
     <router-view />
   </div>
-</template>
+</template> 
 
 
 <script>

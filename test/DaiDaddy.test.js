@@ -12,6 +12,7 @@ const {
 // Contracts
 const DaiDaddy = artifacts.require("./DaiDaddy.sol");
 const SaiTub = artifacts.require("./SaiTub.sol");
+const medianizerMock = artifacts.require("./Medianizer.sol");
 
 // Cup constants(taken to mimic a deployed CDP from Etherscan)
 const cupId = "0x0000000000000000000000000000000000000000000000000000000000001b4e";
@@ -39,8 +40,12 @@ contract("DaiDaddy", ([contractOwner, seller, buyer, random]) => {
                 from: contractOwner
             })
 
-        console.log(this.saiTub.address)
-        this.daiDaddy = await DaiDaddy.new(this.saiTub.address, {
+
+        this.medianizer = await medianizerMock.new({
+            from: contractOwner
+        })
+
+        this.daiDaddy = await DaiDaddy.new(this.saiTub.address, this.medianizer.address, {
             from: contractOwner
         });
     });
@@ -55,7 +60,12 @@ contract("DaiDaddy", ([contractOwner, seller, buyer, random]) => {
             }),
             it("Correctly returns the saitub contract address", async function () {
                 let saiTubAddress = await this.daiDaddy.saiTubAddress()
-                assert(saiTubAddress, this.saiTub.address)
+                assert(saiTubAddress, this.saiTub.address, "Wrong address set")
+            }),
+
+            it("Correctly returns the Ether Price contract address", async function () {
+                let etherPrice = await this.daiDaddy.getEtherPrice.call()
+                assert(etherPrice, 200, "Ether Price not set correctly")
             })
     })
     context("Sell CDP to DaiDaddy", function () {
@@ -68,20 +78,35 @@ contract("DaiDaddy", ([contractOwner, seller, buyer, random]) => {
 
             let addedSale = await this.daiDaddy.debtBook.call(0);
             assert.equal(addedSale.cupId, cupId, "CupId not set correctly")
-            assert.equal(addedSale.owner, seller, "seller not set correctly")
+            assert.equal(addedSale.seller, seller, "seller not set correctly")
             assert.equal(addedSale.discount.toString(10), discount, "discount not set correctly")
             assert.equal(addedSale.status.toString(10), 0, "status not set correctly")
         })
     })
     context("Buy CDP from DaiDaddy", function () {
         it("Correctly enables sale if value is correct", async function () {
+
+            let cupLad = await this.saiTub.lad(cupId)
+            assert.equal(cupLad, seller, "Did not correctly init cup")
+
             await this.daiDaddy.sellCDP(cupId, discount, {
                 from: seller
             })
 
-            let value = await this.daiDaddy.buyCDP.call(cupId)
-            console.log("value", value.toString())
+            cupLad = await this.saiTub.lad(cupId)
+            assert.equal(cupLad, this.daiDaddy.address, "Did not correctly transfer from seller to daiDaddy")
+
+
+            let buyPrice = await this.daiDaddy.debtPositionPriceInEth.call(0)
+            console.log("price", buyPrice.toString(10))
+
+            await this.daiDaddy.buyCDP(0, {
+                from: buyer,
+                value: buyPrice
+            })
+
+            cupLad = await this.saiTub.lad(cupId)
+            assert.equal(cupLad, buyer, "Did not correctly transfer from daiDaddy to buyer")
         })
     })
-
 })
