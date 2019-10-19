@@ -2,9 +2,9 @@
     <a-row class="nav" type="flex" align="center">
         <a-col :span="12">
             <ul class="nav-list-left">
-                <li class="nav-item">
+                <li style="max-width: 200px; margin-right: 2.25rem;">
                     <router-link class="logo" to="/">
-                        <img src="/img/littleMichaelLogo.png" class="littlelogo">
+                        <img src="/img/littleMichaelLogo.png" class="littlelogo" />
                     </router-link>
                 </li>
                 <li class="nav-item">
@@ -38,17 +38,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .littlelogo {
-        width: 40%;
-        height: auto;
-    }
-    .nav{
-        padding: 20px 80px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        font-size: .9rem;
-    }
+.littlelogo {
+    width: 40%;
+    min-width: 200px;
+    height: auto;
+    margin-right: 2.25rem;
+}
+.nav{
+    padding: 20px 80px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+}
 
 .nav-list-left {
   list-style: none;
