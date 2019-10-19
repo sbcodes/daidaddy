@@ -20,9 +20,10 @@ export default {
   width: 80%;
   height: auto;
   align-content: center;
+  padding: 0px 71px;
 }
 .hero-row {
-  height: calc(100vh - 101.25px);
+  height: 100vh;
   width: 100%;
 }
 .hero-michael {
