@@ -9,13 +9,11 @@
 </template>
 
 <script>
-console.log(this);
 export default {
-  name: 'Nav'
-}
+  name: "Nav"
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
     .nav{
         padding: 36px 76px;

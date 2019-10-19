@@ -24,8 +24,6 @@
 </template>
 
 <script>
-import MessageBubble from "./MessageBubble";
-
 export default {
   name: "Messages",
   props: {
