@@ -32,6 +32,9 @@
       <MessageBubble msgType="to" msg="hahaepic"></MessageBubble>
       <MessageBubble msgType="from" msg="yes very xd"></MessageBubble>
     </div>
+    <div style="align: center">
+      <Logo></Logo>
+    </div>
   </div>
 </template>
 
