@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Sell your debt</h1>
+    <h1>Buy Debt from others</h1>
     <ListCDPs />
   </div>
 </template>

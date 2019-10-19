@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import SellDebt from '../views/SellDebt.vue'
+import BuyDebt from '../views/BuyDebt.vue'
 import Listings from '../views/Listings.vue'
 import Market from '../views/Market.vue'
 
@@ -14,9 +15,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/selldebt',
-    name: 'selldebt',
+    path: '/sell',
+    name: 'sell',
     component: SellDebt
+  },
+  {
+    path: '/buy',
+    name: 'buy',
+    component: BuyDebt
   },
   {
     path: '/listings',
