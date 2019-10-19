@@ -1,5 +1,7 @@
 <template>
+  
   <div class="hello">
+    <Nav></Nav>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -33,7 +35,7 @@
       <MessageBubble msgType="from" msg="yes very xd"></MessageBubble>
     </div>
     <div style="align: center">
-      <Logo></Logo>
+      <Logo size="small"></Logo>
     </div>
   </div>
 </template>
