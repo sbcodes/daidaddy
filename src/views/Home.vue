@@ -4,6 +4,7 @@
     <Hero />
     <SellYourCDP />
     <HowItWorks />
+    <MadeBy />
   </div>
 </template>
 
