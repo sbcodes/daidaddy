@@ -5,10 +5,12 @@ import store from './store'
 import './registerServiceWorker'
 import Button from 'ant-design-vue/lib/button';
 import MessageBubble from './components/MessageBubble';
+import Logo from './components/Logo';
 import 'ant-design-vue/dist/antd.css';
 
 Vue.component(Button.name, Button);
 Vue.component(MessageBubble.name, MessageBubble);
+Vue.component(Logo.name, Logo)
 
 Vue.config.productionTip = false
 
