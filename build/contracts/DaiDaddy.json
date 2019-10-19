@@ -1,0 +1,1960 @@
+{
+  "contractName": "DaiDaddy",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "debtBook",
+      "outputs": [
+        {
+          "name": "cupId",
+          "type": "bytes32"
+        },
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "discount",
+          "type": "uint8"
+        },
+        {
+          "name": "status",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "saiTubContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_saiTubAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_cdpId",
+          "type": "bytes32"
+        },
+        {
+          "name": "discount",
+          "type": "uint256"
+        }
+      ],
+      "name": "sellCDP",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"debtBook\",\"outputs\":[{\"name\":\"cupId\",\"type\":\"bytes32\"},{\"name\":\"owner\",\"type\":\"address\"},{\"name\":\"discount\",\"type\":\"uint8\"},{\"name\":\"status\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_cdpId\",\"type\":\"bytes32\"},{\"name\":\"discount\",\"type\":\"uint256\"}],\"name\":\"sellCDP\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"saiTubContract\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_saiTubAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/chris/Projects/daidaddy/contracts/DaiDaddy.sol\":\"DaiDaddy\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/chris/Projects/daidaddy/contracts/DaiDaddy.sol\":{\"keccak256\":\"0xa8aacfd24600f8e7bea1d50e8e8adfb9b51072176c937a3c8f12d25a7c32f85f\",\"urls\":[\"bzzr://669521e0a6666103ce9c3e282ca01de76628fd5a5fc4e2a3b9aa108d6fb2f0cd\"]},\"/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol\":{\"keccak256\":\"0xac0de663b8962486a32730838075bbf6f0dba7daed99dca2265b5eeb5376cd1e\",\"urls\":[\"bzzr://0521a1c0b8278175d560c700a01c3b7c9b9b99a9c07fec87fbd6455203affd74\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405160208061046c8339810180604052602081101561003057600080fd5b810190808051906020019092919050505080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506103da806100926000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806335e2937b146100465780637cd73dcb146100dd57806397a8d81d14610155575b600080fd5b6100726004803603602081101561005c57600080fd5b810190808035906020019092919050505061019f565b604051808581526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018360ff1660ff1681526020018260028111156100c657fe5b60ff16815260200194505050505060405180910390f35b610113600480360360408110156100f357600080fd5b810190808035906020019092919080359060200190929190505050610216565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61015d61034a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600081815481106101ac57fe5b90600052602060002090600202016000915090508060000154908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010160149054906101000a900460ff16908060010160159054906101000a900460ff16905084565b6000610220610370565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663fdac0025856040518263ffffffff1660e01b81526004018082815260200191505060806040518083038186803b15801561029357600080fd5b505afa1580156102a7573d6000803e3d6000fd5b505050506040513d60808110156102bd57600080fd5b8101908080519060200190929190805190602001909291908051906020019092919080519060200190929190505050846000018560200186604001876060018481525084815250848152508473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681525050505050806000015191505092915050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6040518060800160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152509056fea165627a7a72305820c6d4d76f44d5c7dd916ae2be0a72c3306db006b8c5eebf50eec23f18a61e92990029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806335e2937b146100465780637cd73dcb146100dd57806397a8d81d14610155575b600080fd5b6100726004803603602081101561005c57600080fd5b810190808035906020019092919050505061019f565b604051808581526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018360ff1660ff1681526020018260028111156100c657fe5b60ff16815260200194505050505060405180910390f35b610113600480360360408110156100f357600080fd5b810190808035906020019092919080359060200190929190505050610216565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61015d61034a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600081815481106101ac57fe5b90600052602060002090600202016000915090508060000154908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010160149054906101000a900460ff16908060010160159054906101000a900460ff16905084565b6000610220610370565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663fdac0025856040518263ffffffff1660e01b81526004018082815260200191505060806040518083038186803b15801561029357600080fd5b505afa1580156102a7573d6000803e3d6000fd5b505050506040513d60808110156102bd57600080fd5b8101908080519060200190929190805190602001909291908051906020019092919080519060200190929190505050846000018560200186604001876060018481525084815250848152508473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681525050505050806000015191505092915050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6040518060800160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152509056fea165627a7a72305820c6d4d76f44d5c7dd916ae2be0a72c3306db006b8c5eebf50eec23f18a61e92990029",
+  "sourceMap": "161:847:0:-;;;694:99;8:9:-1;5:2;;;30:1;27;20:12;5:2;694:99:0;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;694:99:0;;;;;;;;;;;;;;;;771:14;747;;:39;;;;;;;;;;;;;;;;;;694:99;161:847;;;;;;",
+  "deployedSourceMap": "161:847:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;161:847:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;630:22;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;630:22:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;799:207;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;799:207:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;659:28;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;630:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;799:207::-;867:7;885:14;;:::i;:::-;948;;;;;;;;;;;:19;;;968:6;948:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;948:27:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;948:27:0;;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;948:27:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;910:3;:7;;919:3;:7;;928:3;:7;;937:3;:7;;909:66;;;;;;;;;;;;;;;;;;;;;;;;992:3;:7;;;985:14;;;799:207;;;;:::o;659:28::-;;;;;;;;;;;;;:::o;161:847::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity^0.5.0;\n\n/// @title DaiDaddy: secondary market to let people sell CDP's with outstanding debt\n/// @author Chris Maree\n\nimport \"./mocks/tub.sol\";\n\ncontract DaiDaddy {\n\n    enum Status {LISTED, BOUGHT, CANCLED}\n\n    struct Debt {\n        bytes32 cupId;\n        address owner;\n        uint8 discount; //percentage discount (no decimal)\n        Status status;\n    }\n\n    struct Cup {\n        address  lad;      // CDP owner\n        uint256  ink;      // Locked collateral (in SKR)\n        uint256  art;      // Outstanding normalised debt (tax only)\n        uint256  ire;      // Outstanding normalised debt\n    }\n\n    Debt[] public debtBook;\n\n    SaiTub public saiTubContract;\n\n    constructor(address _saiTubAddress) public {\n        saiTubContract = SaiTub(_saiTubAddress);\n    }\n\n    function sellCDP(bytes32 _cdpId, uint256 discount) public  returns (address){\n        Cup memory cup;\n        (cup.lad, cup.ink, cup.art, cup.ire) = saiTubContract.cups(_cdpId);\n        return cup.lad;\n    }\n}",
+  "sourcePath": "/Users/chris/Projects/daidaddy/contracts/DaiDaddy.sol",
+  "ast": {
+    "absolutePath": "/Users/chris/Projects/daidaddy/contracts/DaiDaddy.sol",
+    "exportedSymbols": {
+      "DaiDaddy": [
+        74
+      ]
+    },
+    "id": 75,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "absolutePath": "/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol",
+        "file": "./mocks/tub.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 75,
+        "sourceUnit": 233,
+        "src": "134:25:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 74,
+        "linearizedBaseContracts": [
+          74
+        ],
+        "name": "DaiDaddy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "DaiDaddy.Status",
+            "id": 6,
+            "members": [
+              {
+                "id": 3,
+                "name": "LISTED",
+                "nodeType": "EnumValue",
+                "src": "199:6:0"
+              },
+              {
+                "id": 4,
+                "name": "BOUGHT",
+                "nodeType": "EnumValue",
+                "src": "207:6:0"
+              },
+              {
+                "id": 5,
+                "name": "CANCLED",
+                "nodeType": "EnumValue",
+                "src": "215:7:0"
+              }
+            ],
+            "name": "Status",
+            "nodeType": "EnumDefinition",
+            "src": "186:37:0"
+          },
+          {
+            "canonicalName": "DaiDaddy.Debt",
+            "id": 15,
+            "members": [
+              {
+                "constant": false,
+                "id": 8,
+                "name": "cupId",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "251:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "251:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "name": "owner",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "274:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "274:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 12,
+                "name": "discount",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "297:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "297:5:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "356:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Status_$6",
+                  "typeString": "enum DaiDaddy.Status"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 13,
+                  "name": "Status",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 6,
+                  "src": "356:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Status_$6",
+                    "typeString": "enum DaiDaddy.Status"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Debt",
+            "nodeType": "StructDefinition",
+            "scope": 74,
+            "src": "229:147:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "DaiDaddy.Cup",
+            "id": 24,
+            "members": [
+              {
+                "constant": false,
+                "id": 17,
+                "name": "lad",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "403:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 16,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "403:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 19,
+                "name": "ink",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "443:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 18,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "443:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "art",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "500:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 20,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "500:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 23,
+                "name": "ire",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "569:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 22,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "569:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Cup",
+            "nodeType": "StructDefinition",
+            "scope": 74,
+            "src": "382:242:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 27,
+            "name": "debtBook",
+            "nodeType": "VariableDeclaration",
+            "scope": 74,
+            "src": "630:22:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Debt_$15_storage_$dyn_storage",
+              "typeString": "struct DaiDaddy.Debt[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 25,
+                "name": "Debt",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 15,
+                "src": "630:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Debt_$15_storage_ptr",
+                  "typeString": "struct DaiDaddy.Debt"
+                }
+              },
+              "id": 26,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "630:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Debt_$15_storage_$dyn_storage_ptr",
+                "typeString": "struct DaiDaddy.Debt[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 29,
+            "name": "saiTubContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 74,
+            "src": "659:28:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SaiTub_$232",
+              "typeString": "contract SaiTub"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 28,
+              "name": "SaiTub",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 232,
+              "src": "659:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SaiTub_$232",
+                "typeString": "contract SaiTub"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 40,
+              "nodeType": "Block",
+              "src": "737:56:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 38,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 34,
+                      "name": "saiTubContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "747:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SaiTub_$232",
+                        "typeString": "contract SaiTub"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 36,
+                          "name": "_saiTubAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 31,
+                          "src": "771:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 35,
+                        "name": "SaiTub",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 232,
+                        "src": "764:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_SaiTub_$232_$",
+                          "typeString": "type(contract SaiTub)"
+                        }
+                      },
+                      "id": 37,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "764:22:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SaiTub_$232",
+                        "typeString": "contract SaiTub"
+                      }
+                    },
+                    "src": "747:39:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SaiTub_$232",
+                      "typeString": "contract SaiTub"
+                    }
+                  },
+                  "id": 39,
+                  "nodeType": "ExpressionStatement",
+                  "src": "747:39:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 41,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 31,
+                  "name": "_saiTubAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41,
+                  "src": "706:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "706:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "705:24:0"
+            },
+            "returnParameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "737:0:0"
+            },
+            "scope": 74,
+            "src": "694:99:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 72,
+              "nodeType": "Block",
+              "src": "875:131:0",
+              "statements": [
+                {
+                  "assignments": [
+                    51
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 51,
+                      "name": "cup",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 72,
+                      "src": "885:14:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                        "typeString": "struct DaiDaddy.Cup"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 50,
+                        "name": "Cup",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 24,
+                        "src": "885:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Cup_$24_storage_ptr",
+                          "typeString": "struct DaiDaddy.Cup"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 52,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "885:14:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 67,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "components": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 53,
+                            "name": "cup",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 51,
+                            "src": "910:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                              "typeString": "struct DaiDaddy.Cup memory"
+                            }
+                          },
+                          "id": 55,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "lad",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 17,
+                          "src": "910:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 56,
+                            "name": "cup",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 51,
+                            "src": "919:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                              "typeString": "struct DaiDaddy.Cup memory"
+                            }
+                          },
+                          "id": 57,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "ink",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 19,
+                          "src": "919:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 58,
+                            "name": "cup",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 51,
+                            "src": "928:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                              "typeString": "struct DaiDaddy.Cup memory"
+                            }
+                          },
+                          "id": 59,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "art",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 21,
+                          "src": "928:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 60,
+                            "name": "cup",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 51,
+                            "src": "937:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                              "typeString": "struct DaiDaddy.Cup memory"
+                            }
+                          },
+                          "id": 61,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "ire",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 23,
+                          "src": "937:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "id": 62,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "TupleExpression",
+                      "src": "909:36:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "tuple(address,uint256,uint256,uint256)"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 65,
+                          "name": "_cdpId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 43,
+                          "src": "968:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 63,
+                          "name": "saiTubContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 29,
+                          "src": "948:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_SaiTub_$232",
+                            "typeString": "contract SaiTub"
+                          }
+                        },
+                        "id": 64,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "cups",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 139,
+                        "src": "948:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                          "typeString": "function (bytes32) view external returns (address,uint256,uint256,uint256)"
+                        }
+                      },
+                      "id": 66,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "948:27:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "tuple(address,uint256,uint256,uint256)"
+                      }
+                    },
+                    "src": "909:66:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 68,
+                  "nodeType": "ExpressionStatement",
+                  "src": "909:66:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 69,
+                      "name": "cup",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 51,
+                      "src": "992:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                        "typeString": "struct DaiDaddy.Cup memory"
+                      }
+                    },
+                    "id": 70,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "lad",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 17,
+                    "src": "992:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 49,
+                  "id": 71,
+                  "nodeType": "Return",
+                  "src": "985:14:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 73,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sellCDP",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 46,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 43,
+                  "name": "_cdpId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 73,
+                  "src": "816:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 42,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "816:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45,
+                  "name": "discount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 73,
+                  "src": "832:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 44,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "832:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "815:34:0"
+            },
+            "returnParameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 73,
+                  "src": "867:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 47,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "867:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "866:9:0"
+            },
+            "scope": 74,
+            "src": "799:207:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 75,
+        "src": "161:847:0"
+      }
+    ],
+    "src": "0:1008:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/chris/Projects/daidaddy/contracts/DaiDaddy.sol",
+    "exportedSymbols": {
+      "DaiDaddy": [
+        74
+      ]
+    },
+    "id": 75,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "absolutePath": "/Users/chris/Projects/daidaddy/contracts/mocks/tub.sol",
+        "file": "./mocks/tub.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 75,
+        "sourceUnit": 233,
+        "src": "134:25:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 74,
+        "linearizedBaseContracts": [
+          74
+        ],
+        "name": "DaiDaddy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "DaiDaddy.Status",
+            "id": 6,
+            "members": [
+              {
+                "id": 3,
+                "name": "LISTED",
+                "nodeType": "EnumValue",
+                "src": "199:6:0"
+              },
+              {
+                "id": 4,
+                "name": "BOUGHT",
+                "nodeType": "EnumValue",
+                "src": "207:6:0"
+              },
+              {
+                "id": 5,
+                "name": "CANCLED",
+                "nodeType": "EnumValue",
+                "src": "215:7:0"
+              }
+            ],
+            "name": "Status",
+            "nodeType": "EnumDefinition",
+            "src": "186:37:0"
+          },
+          {
+            "canonicalName": "DaiDaddy.Debt",
+            "id": 15,
+            "members": [
+              {
+                "constant": false,
+                "id": 8,
+                "name": "cupId",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "251:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "251:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "name": "owner",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "274:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "274:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 12,
+                "name": "discount",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "297:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "297:5:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 15,
+                "src": "356:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Status_$6",
+                  "typeString": "enum DaiDaddy.Status"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 13,
+                  "name": "Status",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 6,
+                  "src": "356:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Status_$6",
+                    "typeString": "enum DaiDaddy.Status"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Debt",
+            "nodeType": "StructDefinition",
+            "scope": 74,
+            "src": "229:147:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "DaiDaddy.Cup",
+            "id": 24,
+            "members": [
+              {
+                "constant": false,
+                "id": 17,
+                "name": "lad",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "403:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 16,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "403:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 19,
+                "name": "ink",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "443:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 18,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "443:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "art",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "500:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 20,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "500:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 23,
+                "name": "ire",
+                "nodeType": "VariableDeclaration",
+                "scope": 24,
+                "src": "569:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 22,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "569:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Cup",
+            "nodeType": "StructDefinition",
+            "scope": 74,
+            "src": "382:242:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 27,
+            "name": "debtBook",
+            "nodeType": "VariableDeclaration",
+            "scope": 74,
+            "src": "630:22:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Debt_$15_storage_$dyn_storage",
+              "typeString": "struct DaiDaddy.Debt[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 25,
+                "name": "Debt",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 15,
+                "src": "630:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Debt_$15_storage_ptr",
+                  "typeString": "struct DaiDaddy.Debt"
+                }
+              },
+              "id": 26,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "630:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Debt_$15_storage_$dyn_storage_ptr",
+                "typeString": "struct DaiDaddy.Debt[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 29,
+            "name": "saiTubContract",
+            "nodeType": "VariableDeclaration",
+            "scope": 74,
+            "src": "659:28:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SaiTub_$232",
+              "typeString": "contract SaiTub"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 28,
+              "name": "SaiTub",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 232,
+              "src": "659:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SaiTub_$232",
+                "typeString": "contract SaiTub"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 40,
+              "nodeType": "Block",
+              "src": "737:56:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 38,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 34,
+                      "name": "saiTubContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "747:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SaiTub_$232",
+                        "typeString": "contract SaiTub"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 36,
+                          "name": "_saiTubAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 31,
+                          "src": "771:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 35,
+                        "name": "SaiTub",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 232,
+                        "src": "764:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_SaiTub_$232_$",
+                          "typeString": "type(contract SaiTub)"
+                        }
+                      },
+                      "id": 37,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "764:22:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SaiTub_$232",
+                        "typeString": "contract SaiTub"
+                      }
+                    },
+                    "src": "747:39:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SaiTub_$232",
+                      "typeString": "contract SaiTub"
+                    }
+                  },
+                  "id": 39,
+                  "nodeType": "ExpressionStatement",
+                  "src": "747:39:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 41,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 31,
+                  "name": "_saiTubAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41,
+                  "src": "706:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "706:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "705:24:0"
+            },
+            "returnParameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "737:0:0"
+            },
+            "scope": 74,
+            "src": "694:99:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 72,
+              "nodeType": "Block",
+              "src": "875:131:0",
+              "statements": [
+                {
+                  "assignments": [
+                    51
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 51,
+                      "name": "cup",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 72,
+                      "src": "885:14:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                        "typeString": "struct DaiDaddy.Cup"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 50,
+                        "name": "Cup",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 24,
+                        "src": "885:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Cup_$24_storage_ptr",
+                          "typeString": "struct DaiDaddy.Cup"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 52,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "885:14:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 67,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "components": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 53,
+                            "name": "cup",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 51,
+                            "src": "910:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                              "typeString": "struct DaiDaddy.Cup memory"
+                            }
+                          },
+                          "id": 55,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "lad",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 17,
+                          "src": "910:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 56,
+                            "name": "cup",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 51,
+                            "src": "919:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                              "typeString": "struct DaiDaddy.Cup memory"
+                            }
+                          },
+                          "id": 57,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "ink",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 19,
+                          "src": "919:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 58,
+                            "name": "cup",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 51,
+                            "src": "928:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                              "typeString": "struct DaiDaddy.Cup memory"
+                            }
+                          },
+                          "id": 59,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "art",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 21,
+                          "src": "928:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 60,
+                            "name": "cup",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 51,
+                            "src": "937:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                              "typeString": "struct DaiDaddy.Cup memory"
+                            }
+                          },
+                          "id": 61,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "ire",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 23,
+                          "src": "937:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "id": 62,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "TupleExpression",
+                      "src": "909:36:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "tuple(address,uint256,uint256,uint256)"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 65,
+                          "name": "_cdpId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 43,
+                          "src": "968:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 63,
+                          "name": "saiTubContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 29,
+                          "src": "948:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_SaiTub_$232",
+                            "typeString": "contract SaiTub"
+                          }
+                        },
+                        "id": 64,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "cups",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 139,
+                        "src": "948:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                          "typeString": "function (bytes32) view external returns (address,uint256,uint256,uint256)"
+                        }
+                      },
+                      "id": 66,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "948:27:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "tuple(address,uint256,uint256,uint256)"
+                      }
+                    },
+                    "src": "909:66:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 68,
+                  "nodeType": "ExpressionStatement",
+                  "src": "909:66:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 69,
+                      "name": "cup",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 51,
+                      "src": "992:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Cup_$24_memory_ptr",
+                        "typeString": "struct DaiDaddy.Cup memory"
+                      }
+                    },
+                    "id": 70,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "lad",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 17,
+                    "src": "992:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 49,
+                  "id": 71,
+                  "nodeType": "Return",
+                  "src": "985:14:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 73,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sellCDP",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 46,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 43,
+                  "name": "_cdpId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 73,
+                  "src": "816:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 42,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "816:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45,
+                  "name": "discount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 73,
+                  "src": "832:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 44,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "832:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "815:34:0"
+            },
+            "returnParameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 73,
+                  "src": "867:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 47,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "867:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "866:9:0"
+            },
+            "scope": 74,
+            "src": "799:207:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 75,
+        "src": "161:847:0"
+      }
+    ],
+    "src": "0:1008:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-10-19T13:57:17.081Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -21,6 +21,9 @@ import * as mutations from "./mutation-types";
 
 import truffleContract from "truffle-contract";
 
+import SaiTubABI from "../../build/contracts/SaiTub.json"
+const SaiTub = truffleContract(SaiTubABI);
+
 // import FundFactoryABI from "../../build/contracts/FundFactory.json"
 // const FundFactory = truffleContract(FundFactoryABI);
 
@@ -33,6 +36,8 @@ export default new Vuex.Store({
     currentNetwork: null,
     etherscanBase: null,
     TokenInfo: null,
+    saiTubAddress: "0xa71937147b55Deb8a530C7229C442Fd3F31b7db2",
+    saiTub: null
   },
   mutations: {
     //WEB3 Stuff
@@ -68,6 +73,7 @@ export default new Vuex.Store({
       dispatch,
       state
     }, web3) {
+      SaiTub.setProvider(web3.currentProvider)
       // FundFactory.setProvider(web3.currentProvider)
       // Fund.setProvider(web3.currentProvider)
       // Set the web3 instance
@@ -120,8 +126,19 @@ export default new Vuex.Store({
         }
         return "0x" + n;
       }
-      console.log("converting number 5")
-      console.log(numStringToBytes32(6990))
+
+      let tubId = numStringToBytes32(6990)
+
+      console.log("tubId", tubId)
+
+      let saiTub = await SaiTub.at(state.saiTubAddress)
+      console.log("saiTub Created")
+      console.log(saiTub)
+      let tab = await saiTub.tab.call(tubId, {
+        from: state.account
+      })
+      console.log(tab)
+      console.log(tab.toString(10))
     }
   }
 })
