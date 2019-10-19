@@ -11,9 +11,8 @@ export default {
 
 <style scoped lang="scss">
 .large {
-  word-wrap: break-word;
   margin-bottom: 12px;
-  padding: 10px 20px;
+  padding: 6px 20px;
   border-radius: 25px;
   font-family: cooper-black-std, serif;
   background: #fff8f9;
@@ -23,7 +22,6 @@ export default {
   max-width: 594px;
 }
 .small {
-  word-wrap: break-word;
   margin-bottom: 12px;
   padding: 10px 20px;
   border-radius: 25px;
@@ -31,7 +29,7 @@ export default {
   background: #fff8f9;
   color: #ff94ce;
   height: 61.25px;
-  font-size: 36px;
+  font-size: 29px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 </style>

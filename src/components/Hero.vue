@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div>
     <a-row class="hero-row" justify="center" align="middle" type="flex">
       <a-col class="logo-col" :md="14" :span="24" justify="center">
         <Logo size="large" />
@@ -18,11 +18,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.hero {
-  background-image: linear-gradient(#ff94ce, #fff);
-  padding: 24px;
-}
-
 .hero-row {
   height: 100vh;
   width: 100%;
