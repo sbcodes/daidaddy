@@ -36,9 +36,8 @@ export default {
 .nav {
   padding: 20px 80px;
   box-sizing: border-box;
-  display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: .9rem;
 }
 
 .nav-list-left {
