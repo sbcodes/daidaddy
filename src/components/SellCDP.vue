@@ -214,8 +214,8 @@ export default {
 .card {
   background: white;
   margin: 35px;
-  minheight: 700px;
-  minwidth: 900px;
+  min-height: 700px;
+  min-width: 900px;
   border-radius: 25px;
   padding: 25px;
 }

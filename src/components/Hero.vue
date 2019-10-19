@@ -21,7 +21,7 @@ export default {
   width: 100%;
 }
 .hero-michael {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   object-fit: contain;
 }

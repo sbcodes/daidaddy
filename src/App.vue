@@ -100,4 +100,15 @@ export default {
     }
   }
 }
+
+
+.pink-button {
+  background: #ff95cd;
+  border: green;
+  border-radius: 25px;
+  font-weight: 900;
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
 </style>
