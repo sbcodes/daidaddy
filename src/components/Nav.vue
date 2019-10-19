@@ -50,38 +50,38 @@ export default {
         font-size: .9rem;
     }
 
-    .nav-list-left {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
+.nav-list-left {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 
-    .nav-list-right {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
+.nav-list-right {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 
-    .nav-item {
-        display: inline-block;
-        margin-right: 2.25rem;
-    }
+.nav-item {
+  display: inline-block;
+  margin-right: 2.25rem;
+}
 
-    .nav-link {
-        color: #ffffff;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 25px;
-    }
+.nav-link {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+}
 
-    .nav-link:hover {
-        border-bottom: 1px solid #ffffff;
-    }
+.nav-link:hover {
+  border-bottom: 1px solid #ffffff;
+}
 </style>
