@@ -1,5 +1,4 @@
 <template>
-  <div>
     <a-row class="hero-row" justify="center" align="middle" type="flex">
       <a-col class="logo-col" :md="14" :span="24" justify="center">
         <Logo size="large" />
@@ -8,7 +7,6 @@
         <Messages />
       </a-col>
     </a-row>
-  </div>
 </template>
 
 <script>
@@ -19,7 +17,7 @@ export default {
 
 <style scoped lang="scss">
 .hero-row {
-  height: 100vh;
+  height: calc(100vh - 101.25px);
   width: 100%;
 }
 
