@@ -11,6 +11,11 @@ import {
 }
 from "@/utils/lookupTools";
 
+import {
+  convertBytes32
+}
+from "@/utils/convertBytes32";
+
 import * as actions from "./actions";
 import * as mutations from "./mutation-types";
 
@@ -90,6 +95,33 @@ export default new Vuex.Store({
       // let userFunds = await fundFactory.getFundForOwner.call(state.account)
       // console.log("USER FUNDS")
       // console.log(userFunds)
+    },
+    [actions.FIND_CDPS]: async function ({
+      commit,
+      dispatch,
+      state
+    }, web3) {
+      console.log("finding CDPS")
+
+      function numStringToBytes32(num) {
+        var bn = new state.web3.web3.utils.BN(num).toTwos(256);
+        return padToBytes32(bn.toString(16));
+      }
+
+      function bytes32ToNumString(bytes32str) {
+        bytes32str = bytes32str.replace(/^0x/, '');
+        var bn = new state.web3.web3.utils.BN(bytes32str, 16).fromTwos(256);
+        return bn.toString();
+      }
+
+      function padToBytes32(n) {
+        while (n.length < 64) {
+          n = "0" + n;
+        }
+        return "0x" + n;
+      }
+      console.log("converting number 5")
+      console.log(numStringToBytes32(6990))
     }
   }
 })
