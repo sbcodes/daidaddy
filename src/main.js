@@ -17,6 +17,7 @@ import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import SellYourCDPSection from "./components/SellYourCDPSection";
 import HowItWorks from "./components/HowItWorks";
+import MadeBy from "./components/MadeBy";
 
 Vue.component(Button.name, Button);
 Vue.component(Row.name, Row);
@@ -29,6 +30,7 @@ Vue.component(Modal.name, Modal)
 Vue.component(Radio.name, Radio)
 Vue.component(SellYourCDPSection.name, SellYourCDPSection);
 Vue.component(HowItWorks.name, HowItWorks);
+Vue.component(MadeBy.name, MadeBy);
 
 Vue.config.productionTip = false;
 
