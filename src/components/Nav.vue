@@ -1,6 +1,6 @@
 <template>
     <div class="nav">
-        <Logo size="small"></Logo>
+        <Logo />
         <p class="left">Home</p>
         <p class="left">Market</p>
         <p class="right">Listing</p>
