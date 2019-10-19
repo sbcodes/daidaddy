@@ -10,6 +10,7 @@ import Logo from "./components/Logo";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import SellYourCDP from "./components/SellYourCDP";
+import HowItWorks from "./components/HowItWorks";
 
 Vue.component(Button.name, Button);
 Vue.component(Row.name, Row);
@@ -19,6 +20,7 @@ Vue.component(Logo.name, Logo);
 Vue.component(Nav.name, Nav);
 Vue.component(Hero.name, Hero);
 Vue.component(SellYourCDP.name, SellYourCDP);
+Vue.component(HowItWorks.name, HowItWorks);
 
 Vue.config.productionTip = false;
 

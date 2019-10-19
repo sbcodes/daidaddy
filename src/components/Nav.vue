@@ -3,7 +3,9 @@
         <a-col :span="12">
             <ul class="nav-list-left">
                 <li class="nav-item">
-                    <Logo size="small" />
+                    <router-link class="logo" to="/">
+                        <img src="/img/littleMichaelLogo.png" class="littlelogo">
+                    </router-link>
                 </li>
                 <li class="nav-item">
                     <router-link class="nav-link" to="/">Home</router-link>
@@ -36,6 +38,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    .littlelogo {
+        width: 40%;
+        height: auto;
+    }
     .nav{
         padding: 20px 80px;
         box-sizing: border-box;
