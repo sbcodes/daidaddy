@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Nav />
     <Hero />
   </div>
 </template>
