@@ -103,10 +103,12 @@ export default {
 
 
 .pink-button {
-  background: #ff95cd;
+  background: #FFC1CC !important;
   border: green;
   border-radius: 25px;
-  font-weight: 900;
+  font-family: Nunito;
+  font-weight: 600;
+  font-size: 24px;
   -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);

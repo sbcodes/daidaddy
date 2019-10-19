@@ -15,7 +15,7 @@ import "./registerServiceWorker";
 import Logo from "./components/Logo";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import SellYourCDP from "./components/SellYourCDP";
+import SellYourCDPSection from "./components/SellYourCDPSection";
 
 Vue.component(Button.name, Button);
 Vue.component(Row.name, Row);
@@ -26,7 +26,7 @@ Vue.component(Nav.name, Nav);
 Vue.component(Hero.name, Hero);
 Vue.component(Modal.name, Modal)
 Vue.component(Radio.name, Radio)
-Vue.component(SellYourCDP.name, SellYourCDP);
+Vue.component(SellYourCDPSection.name, SellYourCDPSection);
 
 Vue.config.productionTip = false;
 
