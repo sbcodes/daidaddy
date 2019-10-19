@@ -14,65 +14,66 @@
           >Sell your CDP</a-button>
         </a-col>
       </a-row>
-
-      <a-row >
-        <a-col :span="2">
-          <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
-        </a-col>
-        <a-col :span="3">
-          <h4 style="font-weight: 900;">Dai Drawn</h4>
-        </a-col>
-        <a-col :span="3">
-          <h4 style="font-weight: 900;">Collateral/Ratio</h4>
-        </a-col>
-        <a-col :span="4">
-          <h4 style="font-weight: 900;">Outstanding Fees</h4>
-        </a-col>
-        <a-col :span="3">
-          <h4 style="font-weight: 900;">CDP Value</h4>
-        </a-col>
-        <a-col :span="3">
-          <h4 style="font-weight: 900;">Discount</h4>
-        </a-col>
-        <a-col :span="3">
-          <h4 class="PinkText" style="font-weight: 900;">Final Value</h4>
-        </a-col>
-        <a-col :span="3">
-          <h4 style="font-weight: 900;"></h4>
-        </a-col>
-      </a-row>
-      <hr />
-      <div v-for="(cdp, index) in cdpInfo" :key="index">
-        <a-row
-          style="padding-top:15px; padding-bottom:15px;"
-          :style="index%2==1?'background:#FFF5F7':'background:white'"
-        >
-          <a-col  style="padding-top:5px" :span="2">
-            <h4 style="padding-left:15px">{{cdp.CDPNo}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="3">
-            <h4>{{cdp.daiDrawn}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="3">
-            <h4>{{cdp.collateralRatio}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="4">
-            <h4>{{cdp.fee}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="3">
-            <h4>{{cdp.value}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="3">
-            <h4>{{cdp.discount}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="3">
-            <h4 class="PinkText">{{cdp.finalPrice}} ETH</h4>
+      <div v-if="cdpInfo.length>0">
+        <a-row>
+          <a-col :span="2">
+            <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
           </a-col>
           <a-col :span="3">
-            <a-button class="BuyButton" type="primary">Buy</a-button>
+            <h4 style="font-weight: 900;">Dai Drawn</h4>
+          </a-col>
+          <a-col :span="3">
+            <h4 style="font-weight: 900;">Collateral/Ratio</h4>
+          </a-col>
+          <a-col :span="4">
+            <h4 style="font-weight: 900;">Outstanding Fees</h4>
+          </a-col>
+          <a-col :span="3">
+            <h4 style="font-weight: 900;">CDP Value</h4>
+          </a-col>
+          <a-col :span="3">
+            <h4 style="font-weight: 900;">Discount</h4>
+          </a-col>
+          <a-col :span="3">
+            <h4 class="PinkText" style="font-weight: 900;">Final Value</h4>
+          </a-col>
+          <a-col :span="3">
+            <h4 style="font-weight: 900;"></h4>
           </a-col>
         </a-row>
-        <hr style="padding:0px; margin:0px" />
+        <hr />
+        <div v-for="(cdp, index) in cdpInfo" :key="index">
+          <a-row
+            style="padding-top:15px; padding-bottom:15px;"
+            :style="index%2==1?'background:#FFF5F7':'background:white'"
+          >
+            <a-col style="padding-top:5px" :span="2">
+              <h4 style="padding-left:15px">{{cdp.CDPNo}}</h4>
+            </a-col>
+            <a-col style="padding-top:5px" :span="3">
+              <h4>{{cdp.daiDrawn}}</h4>
+            </a-col>
+            <a-col style="padding-top:5px" :span="3">
+              <h4>{{cdp.collateralRatio}}</h4>
+            </a-col>
+            <a-col style="padding-top:5px" :span="4">
+              <h4>{{cdp.fee}}</h4>
+            </a-col>
+            <a-col style="padding-top:5px" :span="3">
+              <h4>{{cdp.value}}</h4>
+            </a-col>
+            <a-col style="padding-top:5px" :span="3">
+              <h4>{{cdp.discount}}</h4>
+            </a-col>
+            <a-col style="padding-top:5px" :span="3">
+              <h4 class="PinkText">{{cdp.finalPrice}} ETH</h4>
+            </a-col>
+            <a-col :span="3">
+              <a-button class="BuyButton" type="primary">Buy</a-button>
+            </a-col>
+          </a-row>
+          <hr style="padding:0px; margin:0px" />
+        </div>
       </div>
     </div>
     <a-modal class="model" :width="900" style="width:900px" v-model="visible" @ok="handleOk">
@@ -98,8 +99,11 @@
         </a-col>
       </a-row>
       <hr />
-      <div v-for="(cdp, index) in cdpInfo" :key="index"
-      :style="index%2==1?'background:#FFF5F7':'background:white'">
+      <div
+        v-for="(cdp, index) in cdpInfo"
+        :key="index"
+        :style="index%2==1?'background:#FFF5F7':'background:white'"
+      >
         <a-row style="padding-top:15px; padding-bottom:15px;">
           <a-col style="padding-top:5px" :span="4">
             <h4 style="padding-left:15px">{{cdp.CDPNo}}</h4>
@@ -235,7 +239,5 @@ export default {
   background: white;
   border: white;
 }
-
-
 </style>
 
