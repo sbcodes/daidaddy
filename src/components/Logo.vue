@@ -11,7 +11,6 @@ export default {
 
 <style scoped lang="scss">
 .large {
-  margin-bottom: 12px;
   padding: 6px 20px;
   border-radius: 25px;
   font-family: cooper-black-std, serif;
@@ -22,7 +21,6 @@ export default {
   max-width: 594px;
 }
 .small {
-  margin-bottom: 12px;
   padding: 10px 20px;
   border-radius: 25px;
   font-family: cooper-black-std, serif;
