@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <a-row class="hero-row" justify="center" align="middle" type="flex">
-      <a-col :md="14" :span="24" type="flex">22</a-col>
+      <a-col :md="14" :span="24" type="flex"><Logo size='small' /></a-col>
       <a-col :md="10" :span="24" type="flex">
         <Messages />
       </a-col>
@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import Messages from "./Messages";
 
 export default {
   name: "Hero",
