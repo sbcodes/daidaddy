@@ -29,6 +29,7 @@ contract DaiDaddy {
     Debt[] public debtBook;
     mapping (bytes32 => uint256) cupsToDebt;
     uint256 debtItems;
+    mapping(address => uint256[]) addressToDebtSellers;
 
     // contract instances
     SaiTub public saiTubContract;
@@ -40,13 +41,6 @@ contract DaiDaddy {
         medianizerContract = Medianizer(_medianizerAddress);
     }
 
-    // Can't verify the lad of the cup becuase maker uses a proxy contract for deployments.
-    // In this case of the hackathon it is fine becuase
-    // if someone tried to sell a cup that they did not own it would be rejected by maker. 
-
-    // This should use delegate call in the future but I couldent get this to work so for now have removed the require
-    // on the mock. this is insecure but it's fine for the hackathon.
-    // address(saiTubContract).delegatecall(abi.encodeWithSignature("give(bytes32,address)", _cupId, address(this)));
     function sellCDP(bytes32 _cupId, uint256 _discount) public {
         //transfer the CDP to the DaiDaddy Contract
         saiTubContract.give(_cupId, address(this));
@@ -54,6 +48,7 @@ contract DaiDaddy {
         // add the sale to the order book.
         uint256 index = debtBook.push(Debt(_cupId, msg.sender, address(0), _discount, Status.LISTED)) - 1;
         cupsToDebt[_cupId] = index;
+        addressToDebtSellers[msg.sender].push(index);
     }
 
     function buyCDP(uint256 _debtId) public payable returns (uint256) {
@@ -71,6 +66,16 @@ contract DaiDaddy {
         //update debt book
         debtBook[_debtId].buyer = msg.sender;
         debtBook[_debtId].status = Status.BOUGHT;
+    }
+
+    function cancelCDPSale(uint256 _debtId) public {
+        require(debtBook[_debtId].seller == msg.sender, "Not your CDP sale to cancel");
+        require(debtBook[_debtId].status == Status.LISTED, "Wrong sell order status");
+        bytes32 _cupId = debtBook[_debtId].cupId;
+        
+        // transfer sell order and change status
+        saiTubContract.give(_cupId, msg.sender);
+        debtBook[_debtId].status = Status.CANCLED;
     }
 
     function debtPositionPriceInEth(uint256 _debtId) public view returns (uint256) {
@@ -91,5 +96,9 @@ contract DaiDaddy {
 
     function getEtherPrice() public view returns(uint256){
         return uint256(medianizerContract.read());
+    }
+
+    function getDebtSalesForAddress(address _address) public view returns(uint256[] memory){
+        return addressToDebtSellers[_address];
     }
 }
