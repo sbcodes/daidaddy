@@ -1,14 +1,13 @@
 <template>
-    <h1 v-if = "size === 'big'" class = "logo">
+    <h1 v-if="size === 'small'" class = "smalllogo">
       $DAI daddy
     </h1>
-    <h2 v-else class = "smalllogo">
+    <h1 v-else class = "logo">
         $DAI daddy
-    </h2>
+    </h1>
 </template>
 
 <script>
-console.log(this);
 export default {
   name: 'Logo',
   size: String
