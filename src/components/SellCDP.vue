@@ -97,7 +97,7 @@
             class="BuyButton"
             type="primary"
             @click="sellCDP"
-            :disabled="debtOrder.cdpInfo==null"
+            :disabled="debtOrder.cdpId==null"
           >Sell</a-button>
         </div>
       </template>
@@ -143,7 +143,7 @@
                   <h4>{{cdp.collateralRatio}}</h4>
                 </a-col>
                 <a-col style="padding-top:5px" :span="4">
-                  <h4>{{cdp.value}}</h4>
+                  <h4>{{cdp.value}} ETH</h4>
                 </a-col>
               </a-row>
             </div>
@@ -155,8 +155,16 @@
           <h3 style="padding:5px; font-weight: 900;">Apply A discount</h3>
           <h3 style="padding:5px; font-weight: 900;">Discount</h3>
           <a-input-number :min="1" :max="100" v-model="debtOrder.discount" />
+          <h3
+            v-if="debtOrder.discount>13"
+            style="padding:5px; font-weight: 900; color:#FF2898"
+          >Caution: This discount is above the 13% liquidation penalty!</h3>
           <h3 style="padding:5px; font-weight: 900;">You'll get</h3>
-          <h3 style="padding:5px; font-weight: 900; color:#FF2898">-</h3>
+          <h3 v-if="debtOrder.cdpId==null" style="padding:5px; font-weight: 900; color:#FF2898">-</h3>
+          <h3
+            v-if="debtOrder.cdpId!=null"
+            style="padding:5px; font-weight: 900; color:#FF2898"
+          >{{cdpInfo[debtOrder.debtIndex].value * (100-debtOrder.discount)/100}} ETH</h3>
         </a-col>
       </a-row>
     </a-modal>
@@ -171,6 +179,7 @@ export default {
     ...mapActions(["SELL_CDP"]),
     sellCDP() {
       console.log("SELLING!");
+      this.SELL_CDP(this.debtOrder);
     },
     showModal() {
       this.visible = true;
@@ -185,18 +194,22 @@ export default {
         return x;
       });
       this.cdpInfo[cdpId].selected = true;
-      this.debtOrder.cdpId = cdpId
+      this.debtOrder.debtIndex = cdpId;
+      this.debtOrder.cdpId = this.cdpInfo[cdpId].cdpId;
     }
   },
   data() {
     return {
       debtOrder: {
         discount: 5,
+        debtIndex: null,
         cdpId: null
       },
       visible: false,
       cdpInfo: [
         {
+          cdpId:
+            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69420,
           daiDrawn: 666,
           collateralRatio: "2 Eth | 200%",
@@ -207,6 +220,8 @@ export default {
           selected: false
         },
         {
+          cdpId:
+            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69420,
           daiDrawn: 666,
           collateralRatio: "2 Eth | 200%",
@@ -217,6 +232,8 @@ export default {
           selected: false
         },
         {
+          cdpId:
+            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69420,
           daiDrawn: 666,
           collateralRatio: "2 Eth | 200%",
@@ -227,6 +244,8 @@ export default {
           selected: false
         },
         {
+          cdpId:
+            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69420,
           daiDrawn: 666,
           collateralRatio: "2 Eth | 200%",
@@ -237,6 +256,8 @@ export default {
           selected: false
         },
         {
+          cdpId:
+            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69420,
           daiDrawn: 666,
           collateralRatio: "2 Eth | 200%",
