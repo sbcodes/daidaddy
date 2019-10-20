@@ -23,8 +23,11 @@
             </a-popover>
           </h4>
         </a-col>
-        <a-col :span="4">
-          <h4 style="font-weight: 900;">Collateral/Ratio</h4>
+        <a-col :span="3">
+          <h4 style="font-weight: 900;">Collateral</h4>
+        </a-col>
+        <a-col :span="3">
+          <h4 style="font-weight: 900;">Ratio</h4>
         </a-col>
         <a-col :span="3">
           <h4 style="font-weight: 900;">CDP Value</h4>
@@ -32,10 +35,10 @@
         <a-col :span="3">
           <h4 style="font-weight: 900;">Discount</h4>
         </a-col>
-        <a-col :span="4">
+        <a-col :span="3">
           <h4 class="PinkText" style="font-weight: 900;">
-            Final Value
-            <a-popover title="Final Value">
+            Final Price
+            <a-popover title="Final Price">
               <template
                 slot="content"
               >The final calculated value of the CDP considering the underlying collateral, debt drawn, stability fee outstanding and discount.</template>
@@ -63,8 +66,11 @@
           <a-col style="padding-top:5px" :span="3">
             <h4>{{numberWithCommas(cdp.daiDrawn)}} DAI</h4>
           </a-col>
-          <a-col style="padding-top:5px" :span="4">
-            <h4>{{cdp.collateralRatio}}</h4>
+          <a-col style="padding-top:5px" :span="3">
+            <h4>{{cdp.collateral}} ETH</h4>
+          </a-col>
+          <a-col style="padding-top:5px" :span="3">
+            <h4>{{cdp.ratio}} %</h4>
           </a-col>
           <a-col style="padding-top:5px" :span="3">
             <h4>{{numberWithCommas(cdp.value)}} ETH</h4>
@@ -72,11 +78,11 @@
           <a-col style="padding-top:5px" :span="3">
             <h4>{{cdp.discount}} %</h4>
           </a-col>
-          <a-col style="padding-top:5px" :span="4">
+          <a-col style="padding-top:5px" :span="3">
             <h4 class="PinkText">{{cdp.finalPrice}} ETH</h4>
           </a-col>
-          <a-col :span="3">
-            <a-button class="BuyButton" @click="showModal(cdp.debtId)" type="primary">Buy</a-button>
+          <a-col style=" padding-right:15px" :span="3">
+            <a-button class="BuyButton" @click="showModal(cdp.debtId)" type="primary">Buy CDP</a-button>
           </a-col>
         </a-row>
         <hr style="padding:0px; margin:0px" />
@@ -99,7 +105,7 @@
             @click="handleOk"
             style="border-radius: 25px;"
           >Cancel</a-button>
-          <a-button key="submit" class="BuyButton" type="primary" @click="buyCDP">Buy</a-button>
+          <a-button key="submit" class="BuyButton" type="primary" @click="buyCDP">Confirm</a-button>
         </div>
       </template>
       <h2 style="padding-bottom:25px">Buy CDP</h2>
@@ -107,7 +113,7 @@
         <a-col :span="3">
           <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
         </a-col>
-        <a-col :span="3">
+        <a-col :span="4">
           <h4 style="font-weight: 900;">
             Total Debt
             <a-popover title="Total Debt">
@@ -118,10 +124,10 @@
             </a-popover>
           </h4>
         </a-col>
-        <a-col :span="4">
+        <a-col :span="5">
           <h4 style="font-weight: 900;">Collateral/Ratio</h4>
         </a-col>
-        <a-col :span="3">
+        <a-col :span="4">
           <h4 style="font-weight: 900;">CDP Value</h4>
         </a-col>
         <a-col :span="3">
@@ -129,7 +135,7 @@
         </a-col>
         <a-col :span="4">
           <h4 class="PinkText" style="font-weight: 900;">
-            Final Value
+            Final Price
             <a-popover title="Final Value">
               <template
                 slot="content"
@@ -137,9 +143,6 @@
               <a-button size="small" style="font-weight:900;" class="infoButton" type="primary">i</a-button>
             </a-popover>
           </h4>
-        </a-col>
-        <a-col :span="3">
-          <h4 style="font-weight: 900;"></h4>
         </a-col>
       </a-row>
       <hr />
@@ -152,13 +155,13 @@
               >{{numberWithCommas(cdpInfo[selectedCDP].CDPNo)}}</h4>
             </a>
           </a-col>
-          <a-col style="padding-top:5px" :span="3">
+          <a-col style="padding-top:5px" :span="4">
             <h4>{{numberWithCommas(cdpInfo[selectedCDP].daiDrawn)}} DAI</h4>
           </a-col>
-          <a-col style="padding-top:5px" :span="4">
+          <a-col style="padding-top:5px" :span="5">
             <h4>{{cdpInfo[selectedCDP].collateralRatio}}</h4>
           </a-col>
-          <a-col style="padding-top:5px" :span="3">
+          <a-col style="padding-top:5px" :span="4">
             <h4>{{numberWithCommas(cdpInfo[selectedCDP].value)}} ETH</h4>
           </a-col>
           <a-col style="padding-top:5px" :span="3">
@@ -166,13 +169,6 @@
           </a-col>
           <a-col style="padding-top:5px" :span="4">
             <h4 class="PinkText">{{cdpInfo[selectedCDP].finalPrice}} ETH</h4>
-          </a-col>
-          <a-col :span="3">
-            <a-button
-              class="BuyButton"
-              @click="showModal(cdpInfo[selectedCDP].debtId)"
-              type="primary"
-            >Buy</a-button>
           </a-col>
         </a-row>
         <hr style="padding:0px; margin:0px" />
@@ -221,7 +217,8 @@ export default {
           debtId: 0,
           CDPNo: 14960,
           daiDrawn: 151151,
-          collateralRatio: "1411.76 ETH | 166.23%",
+          collateral: 1411.76,
+          ratio: 166.23,
           fee: 901,
           value: 522.632,
           discount: 2,
@@ -232,7 +229,8 @@ export default {
           debtId: 1,
           CDPNo: 132973,
           daiDrawn: 1785,
-          collateralRatio: "21.03 ETH | 209%",
+          collateral: 2103,
+          ratio: 209,
           fee: 0.34,
           value: 10.532,
           discount: 6,
@@ -243,7 +241,8 @@ export default {
           debtId: 2,
           CDPNo: 14908,
           daiDrawn: 618.16,
-          collateralRatio: "5.69 ETH | 163.69%",
+          collateral: 5.69,
+          ratio: 163.69,
           fee: 2.83,
           value: 2.052,
           discount: 9,
@@ -254,7 +253,8 @@ export default {
           debtId: 3,
           CDPNo: 1040,
           daiDrawn: 1800.95,
-          collateralRatio: "18.3 ETH | 178.14%",
+          collateral: 18.3,
+          ratio: 178.14,
           fee: 6.7,
           value: 7.712,
           discount: 1,

@@ -16,7 +16,7 @@
         </a-col>
       </a-row>
 
-      <div v-if="myListings.length==0" style="text-align:center;padding-top:100px">
+      <div v-if="myListings.length==0" style="text-align:center;padding-top:100px; padding-bottom:100px">
         <h2 style="font-weight: 900;">
           Find yourself a
           <span style="color:#FFA1D3">#daidaddy 🤑</span>
@@ -127,7 +127,7 @@
             type="primary"
             @click="sellCDP"
             :disabled="debtOrder.cdpId==null"
-          >Sell</a-button>
+          >Sell CDP</a-button>
         </div>
       </template>
       <h2 style="padding-bottom:25px">Sell CDP</h2>
@@ -300,7 +300,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   background: white;
   margin: 50px;
-  min-height: 700px;
+  /* min-height: 700px; */
   min-width: 900px;
   border-radius: 25px;
   padding: 25px;
