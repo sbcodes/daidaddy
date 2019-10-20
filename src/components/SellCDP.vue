@@ -117,11 +117,11 @@
               <h4 style="font-weight: 900;">CDP Value</h4>
             </a-col>
           </a-row>
-          <hr />
+          <hr style="padding:0px; margin:0px" />
           <div
             v-for="(cdp, index) in myCdps"
             :key="index"
-            :style="index%2==1?'background:#FFF5F7':'background:white'"
+            :style="index==debtOrder.debtIndex?'background:#FFF5F7':'background:white'"
           >
             <div @click="selectCDP(index)" style="cursor: pointer">
               <a-row style="padding-top:15px; padding-bottom:15px;">
@@ -149,7 +149,13 @@
         <a-col style="padding-left:25px" :span="7">
           <h3 style="padding:5px; font-weight: 900;">Apply A discount</h3>
           <h3 style="padding:5px; font-weight: 900;">Discount</h3>
-          <a-input-number :min="1" :max="100" v-model="debtOrder.discount" />
+          <a-input-number
+            class="placeholder"
+            :min="1"
+            :max="100"
+            v-model="debtOrder.discount"
+            data-placeholder="%"
+          />
           <h3
             v-if="debtOrder.discount>13"
             style="padding:5px; font-weight: 900; color:#FF2898"
@@ -191,6 +197,11 @@ export default {
       this.myCdps[cdpId].selected = true;
       this.debtOrder.debtIndex = cdpId;
       this.debtOrder.cdpId = this.myCdps[cdpId].cdpId;
+    }
+  },
+  mounted() {
+    if (this.$route.query.open) {
+      this.showModal();
     }
   },
   data() {
@@ -279,6 +290,20 @@ export default {
 .verticalLine {
   border-right-style: solid;
   height: 400px;
+}
+
+.placeholder {
+  position: relative;
+  display: inline-block;
+}
+
+.placeholder::after {
+  position: absolute;
+  right: 30px;
+  top: 4px;
+  content: attr(data-placeholder);
+  pointer-events: none;
+  opacity: 0.6;
 }
 </style>
 
