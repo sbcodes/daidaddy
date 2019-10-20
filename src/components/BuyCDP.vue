@@ -108,7 +108,7 @@
           <a-button key="submit" class="BuyButton" type="primary" @click="buyCDP">Confirm</a-button>
         </div>
       </template>
-      <h2 style="padding-bottom:25px">Buy CDP</h2>
+      <h2 style="padding-bottom:25px; font-weight:900">Buy CDP</h2>
       <a-row>
         <a-col :span="3">
           <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
