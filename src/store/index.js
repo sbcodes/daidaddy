@@ -24,8 +24,8 @@ import truffleContract from "truffle-contract";
 import SaiTubABI from "../../build/contracts/SaiTub.json"
 const SaiTub = truffleContract(SaiTubABI);
 
-// import FundFactoryABI from "../../build/contracts/FundFactory.json"
-// const FundFactory = truffleContract(FundFactoryABI);
+import DaiDaddyABI from "../../build/contracts/DaiDaddy.json"
+const DaiDaddy = truffleContract(DaiDaddyABI);
 
 Vue.use(Vuex)
 
@@ -39,7 +39,7 @@ export default new Vuex.Store({
     saiTubAddress: "0xa71937147b55Deb8a530C7229C442Fd3F31b7db2",
     saiTub: null,
     miningTransactionObject: {
-      status: 'done',
+      status: null,
       txHash: ''
     }
   },
@@ -81,9 +81,8 @@ export default new Vuex.Store({
       state
     }, web3) {
       SaiTub.setProvider(web3.currentProvider)
-      // FundFactory.setProvider(web3.currentProvider)
-      // Fund.setProvider(web3.currentProvider)
-      // Set the web3 instance
+      DaiDaddy.setProvider(web3.currentProvider)
+
       console.log("IN STORE")
       console.log(web3)
       commit(mutations.SET_WEB3, {
@@ -98,6 +97,10 @@ export default new Vuex.Store({
       if (account) {
         commit(mutations.SET_ACCOUNT, account);
       }
+
+      let daiDaddy = await DaiDaddy.deployed()
+      let numberOfSales = await daiDaddy.debtItems
+      console.log("Debt boi!")
       // let fundFactory = await FundFactory.at(state.factoryAddress)
       // console.log("logging vyper from UI")
       // let numberOfFunds = await fundFactory.getAllFundUids()
