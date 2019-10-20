@@ -7,6 +7,7 @@
         </a-col>
         <a-col :span="12" style="text-align:right">
           <a-button
+            v-if="myListings.length>0"
             type="primary"
             class="BuyButton"
             style="font-weight: 900;"
@@ -14,19 +15,48 @@
           >Sell your CDP</a-button>
         </a-col>
       </a-row>
+
+      <div v-if="myListings.length==0" style="text-align:center;padding-top:100px">
+        <h2 style="font-weight: 900;">
+          Find yourself a
+          <span style="color:#FFA1D3">#daidaddy 🤑</span>
+        </h2>
+        <a-button
+          type="primary"
+          class="BuyButton"
+          style="font-weight: 900;"
+          @click="showModal"
+        >Sell your CDP</a-button>
+      </div>
       <div v-if="myListings.length>0">
         <a-row>
           <a-col :span="3">
             <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
           </a-col>
           <a-col :span="3">
-            <h4 style="font-weight: 900;">Total Debt</h4>
+            <h4 style="font-weight: 900;">
+              Total Debt
+              <a-popover title="Total Debt">
+                <template
+                  slot="content"
+                >The total debt on the CDP. This is the total DAI drawn + all fees incurred over the duration of the CDP's lifespan.</template>
+                <a-button size="small" style="font-weight:900;" class="infoButton" type="primary">i</a-button>
+              </a-popover>
+            </h4>
           </a-col>
           <a-col :span="4">
             <h4 style="font-weight: 900;">Collateral/Ratio</h4>
           </a-col>
           <a-col :span="3">
-            <h4 style="font-weight: 900;">CDP Value</h4>
+            <h4 style="font-weight: 900;">
+              CDP Value
+              <a-popover title="CDP Value">
+                <template
+                  slot="content"
+                >The final calculated value of the CDP considering the underlying collateral, debt drawn, stability fee outstanding and discount.</template>
+                <a-button size="small" style="font-weight:900;" class="infoButton" type="primary">i</a-button>
+              </a-popover>
+            </h4>
           </a-col>
           <a-col :span="3">
             <h4 style="font-weight: 900;">Discount</h4>
@@ -45,16 +75,20 @@
             :style="index%2==1?'background:#FFF5F7':'background:white'"
           >
             <a-col style="padding-top:5px" :span="3">
-              <h4 style="padding-left:15px">{{cdp.CDPNo}}</h4>
+              <a :href="'https://mkr.tools/cdp/'+ cdp.CDPNo" target="_blank">
+                <h4
+                  style="padding-left:15px;   text-decoration: underline;"
+                >{{numberWithCommas(cdp.CDPNo)}}</h4>
+              </a>
             </a-col>
             <a-col style="padding-top:5px" :span="3">
-              <h4>{{cdp.daiDrawn}}</h4>
+              <h4>{{numberWithCommas(cdp.daiDrawn)}} DAI</h4>
             </a-col>
             <a-col style="padding-top:5px" :span="4">
               <h4>{{cdp.collateralRatio}}</h4>
             </a-col>
             <a-col style="padding-top:5px" :span="3">
-              <h4>{{cdp.value}}</h4>
+              <h4>{{cdp.value}} ETH</h4>
             </a-col>
             <a-col style="padding-top:5px" :span="3">
               <h4>{{cdp.discount}}</h4>
@@ -129,10 +163,10 @@
                   <a-radio style="padding-top:5px" :checked="myCdps[index].selected"></a-radio>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
-                  <h4>{{cdp.CDPNo}}</h4>
+                  <h4>{{numberWithCommas(cdp.CDPNo)}}</h4>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
-                  <h4>{{cdp.daiDrawn}}</h4>
+                  <h4>{{numberWithCommas(cdp.daiDrawn)}} DAI</h4>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
                   <h4>{{cdp.collateralRatio}}</h4>
@@ -147,7 +181,7 @@
         </a-col>
         <a-col class="verticalLine" :span="1" />
         <a-col style="padding-left:25px" :span="7">
-          <h3 style="padding:5px; font-weight: 900;">Apply A discount</h3>
+          <h3 style="padding:5px; font-weight: 900;">Apply a discount</h3>
           <h3 style="padding:5px; font-weight: 900;">Discount</h3>
           <a-input-number
             class="placeholder"
@@ -160,7 +194,7 @@
             v-if="debtOrder.discount>13"
             style="padding:5px; font-weight: 900; color:#FF2898"
           >Caution: This discount is above the 13% liquidation penalty!</h3>
-          <h3 style="padding:5px; font-weight: 900;">You'll get</h3>
+          <h3 style="padding:5px; font-weight: 900;">You'll get:</h3>
           <h3 v-if="debtOrder.cdpId==null" style="padding:5px; font-weight: 900; color:#FF2898">-</h3>
           <h3
             v-if="debtOrder.cdpId!=null"
@@ -181,6 +215,18 @@ export default {
     sellCDP() {
       console.log("SELLING!");
       this.SELL_CDP(this.debtOrder);
+      this.myListings.push({
+        cdpId:
+          "0x0000000000000000000000000000000000000000000000000000000000001b4e",
+        CDPNo: 3905,
+        daiDrawn: 9605,
+        collateralRatio: "166.19 ETH | 307.93%",
+        fee: 884.0,
+        value: 118.165,
+        discount: 2,
+        finalPrice: 115.801,
+        selected: false
+      });
     },
     showModal() {
       this.visible = true;
@@ -197,6 +243,9 @@ export default {
       this.myCdps[cdpId].selected = true;
       this.debtOrder.debtIndex = cdpId;
       this.debtOrder.cdpId = this.myCdps[cdpId].cdpId;
+    },
+    numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
   },
   mounted() {
@@ -212,27 +261,14 @@ export default {
         cdpId: null
       },
       visible: false,
-      myListings: [
-        {
-          cdpId:
-            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
-          CDPNo: 3905,
-          daiDrawn: 9605,
-          collateralRatio: "166.19 Eth | 307.93%",
-          fee: 884.0,
-          value: 118.165,
-          discount: 2,
-          finalPrice: 115.801,
-          selected: false
-        }
-      ],
+      myListings: [],
       myCdps: [
         {
           cdpId:
             "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69420,
           daiDrawn: 50,
-          collateralRatio: "1 Eth | 421%",
+          collateralRatio: "1 ETH | 421%",
           fee: 0.042069,
           value: 0.75,
           discount: 5,
@@ -244,7 +280,7 @@ export default {
             "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69421,
           daiDrawn: 666,
-          collateralRatio: "2 Eth | 200%",
+          collateralRatio: "2 ETH | 200%",
           fee: 0.042069,
           value: 1,
           discount: 5,
@@ -259,8 +295,11 @@ export default {
 
 <style scoped>
 .card {
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: white;
-  margin: 35px;
+  margin: 50px;
   min-height: 700px;
   min-width: 900px;
   border-radius: 25px;
@@ -289,7 +328,10 @@ export default {
 
 .verticalLine {
   border-right-style: solid;
+  border-width: thin;
   height: 400px;
+  padding-left: 25px;
+  width: 1px;
 }
 
 .placeholder {
@@ -304,6 +346,14 @@ export default {
   content: attr(data-placeholder);
   pointer-events: none;
   opacity: 0.6;
+}
+
+.infoButton {
+  background: #ff95cd;
+  border: green;
+  width: 25px;
+  border-radius: 20px;
+  font-weight: 900;
 }
 </style>
 
