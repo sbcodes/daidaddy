@@ -1,6 +1,6 @@
 <template>
     <a-row class="container" type="flex" align="center">
-        <a-col :span="12"  style="padding: 0 60px;">
+        <a-col :span="12"  style="padding: 0 100px;">
             <div style="max-width: 500px">
                 <h2 class="title">Sell your CDP</h2>
                 <p class="subtitle">
@@ -17,7 +17,7 @@
                 </a-col>
             </a-row>
         </a-col>
-        <a-col :span="12" style="padding-left: 80px">
+        <a-col :span="12" style="display: flex; justify-content: center;">
             <div style="max-width: 420px">
                 <p class="heading-2">
                     Do you need ETH now? Have a CDP that you can’t afford to pay off? Find yourself a
