@@ -39,7 +39,7 @@ export default new Vuex.Store({
     saiTubAddress: "0xa71937147b55Deb8a530C7229C442Fd3F31b7db2",
     saiTub: null,
     miningTransactionObject: {
-      status: null,
+      status: 'done',
       txHash: ''
     }
   },
@@ -146,6 +146,16 @@ export default new Vuex.Store({
       })
       console.log(tab)
       console.log(tab.toString(10))
-    }
+    },
+    [actions.CLOSE_MINING_DIALOG]: async function ({
+      commit,
+      dispatch,
+      state
+    }) {
+      commit(mutations.SET_MINING_TRANSACTION_OBJECT, {
+        status: null,
+        txHash: ""
+      })
+    },
   }
 })

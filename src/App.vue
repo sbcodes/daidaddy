@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <router-view />
+    <mining-transaction />
   </div>
 </template> 
 
 
 <script>
-/* global web3:true */
+import MiningTransaction from "@/components/widgets/MiningTransaction";
 
 import Web3 from "web3";
 import * as actions from "@/store/actions";
@@ -17,7 +18,7 @@ import router from "@/router";
 
 export default {
   name: "app",
-  components: { ClickableAddress },
+  components: { ClickableAddress, MiningTransaction },
   data() {
     return {
       web3Detected: true,
