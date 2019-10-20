@@ -18,8 +18,8 @@ export default {
 
 <style scoped lang="scss">
 .biglogo {
-  width: 80%;
-  max-width: 590px;
+  width: 90%;
+  max-width: 610px;
   height: auto;
   align-content: center;
   padding: 0px 71px;
