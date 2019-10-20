@@ -45,10 +45,14 @@
             :style="index%2==1?'background:#FFF5F7':'background:white'"
           >
             <a-col style="padding-top:5px" :span="3">
-              <h4 style="padding-left:15px">{{cdp.CDPNo}}</h4>
+              <a :href="'https://mkr.tools/cdp/'+ cdp.CDPNo" target="_blank">
+                <h4
+                  style="padding-left:15px;   text-decoration: underline;"
+                >{{numberWithCommas(cdp.CDPNo)}}</h4>
+              </a>
             </a-col>
             <a-col style="padding-top:5px" :span="3">
-              <h4>{{cdp.daiDrawn}}</h4>
+              <h4>{{numberWithCommas(cdp.daiDrawn)}} DAI</h4>
             </a-col>
             <a-col style="padding-top:5px" :span="4">
               <h4>{{cdp.collateralRatio}}</h4>
@@ -129,10 +133,10 @@
                   <a-radio style="padding-top:5px" :checked="myCdps[index].selected"></a-radio>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
-                  <h4>{{cdp.CDPNo}}</h4>
+                  <h4>{{numberWithCommas(cdp.CDPNo)}}</h4>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
-                  <h4>{{cdp.daiDrawn}}</h4>
+                  <h4>{{numberWithCommas(cdp.daiDrawn)}}</h4>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
                   <h4>{{cdp.collateralRatio}}</h4>
@@ -197,6 +201,9 @@ export default {
       this.myCdps[cdpId].selected = true;
       this.debtOrder.debtIndex = cdpId;
       this.debtOrder.cdpId = this.myCdps[cdpId].cdpId;
+    },
+    numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
   },
   mounted() {
@@ -218,7 +225,7 @@ export default {
             "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 3905,
           daiDrawn: 9605,
-          collateralRatio: "166.19 Eth | 307.93%",
+          collateralRatio: "166.19 ETH | 307.93%",
           fee: 884.0,
           value: 118.165,
           discount: 2,
@@ -232,7 +239,7 @@ export default {
             "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69420,
           daiDrawn: 50,
-          collateralRatio: "1 Eth | 421%",
+          collateralRatio: "1 ETH | 421%",
           fee: 0.042069,
           value: 0.75,
           discount: 5,
@@ -244,7 +251,7 @@ export default {
             "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69421,
           daiDrawn: 666,
-          collateralRatio: "2 Eth | 200%",
+          collateralRatio: "2 ETH | 200%",
           fee: 0.042069,
           value: 1,
           discount: 5,
@@ -260,7 +267,7 @@ export default {
 <style scoped>
 .card {
   background: white;
-  margin: 35px;
+  margin: 50px;
   min-height: 700px;
   min-width: 900px;
   border-radius: 25px;
