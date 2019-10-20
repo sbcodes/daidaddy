@@ -275,9 +275,7 @@ export default {
 
 <style scoped>
 .card {
-  font-family: "Nunito";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Nunito" !important;
   background: white;
   margin: 50px;
   minheight: 700px;

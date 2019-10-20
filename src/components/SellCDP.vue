@@ -296,9 +296,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .card {
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: white;
