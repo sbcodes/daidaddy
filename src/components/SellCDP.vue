@@ -20,13 +20,29 @@
             <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
           </a-col>
           <a-col :span="3">
-            <h4 style="font-weight: 900;">Total Debt</h4>
+            <h4 style="font-weight: 900;">
+              Total Debt
+              <a-popover title="Total Debt">
+                <template
+                  slot="content"
+                >The total debt on the CDP. This is the total DAI drawn + all fees incurred over the duration of the CDP's lifespan.</template>
+                <a-button size="small" style="font-weight:900;" class="infoButton" type="primary">i</a-button>
+              </a-popover>
+            </h4>
           </a-col>
           <a-col :span="4">
             <h4 style="font-weight: 900;">Collateral/Ratio</h4>
           </a-col>
           <a-col :span="3">
-            <h4 style="font-weight: 900;">CDP Value</h4>
+            <h4 style="font-weight: 900;">
+              CDP Value
+              <a-popover title="CDP Value">
+                <template
+                  slot="content"
+                >The final calculated value of the CDP considering the underlying collateral, debt drawn, stability fee outstanding and discount.</template>
+                <a-button size="small" style="font-weight:900;" class="infoButton" type="primary">i</a-button>
+              </a-popover>
+            </h4>
           </a-col>
           <a-col :span="3">
             <h4 style="font-weight: 900;">Discount</h4>
@@ -58,7 +74,7 @@
               <h4>{{cdp.collateralRatio}}</h4>
             </a-col>
             <a-col style="padding-top:5px" :span="3">
-              <h4>{{cdp.value}}</h4>
+              <h4>{{cdp.value}} ETH</h4>
             </a-col>
             <a-col style="padding-top:5px" :span="3">
               <h4>{{cdp.discount}}</h4>
@@ -136,7 +152,7 @@
                   <h4>{{numberWithCommas(cdp.CDPNo)}}</h4>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
-                  <h4>{{numberWithCommas(cdp.daiDrawn)}}</h4>
+                  <h4>{{numberWithCommas(cdp.daiDrawn)}} DAI</h4>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
                   <h4>{{cdp.collateralRatio}}</h4>
@@ -151,7 +167,7 @@
         </a-col>
         <a-col class="verticalLine" :span="1" />
         <a-col style="padding-left:25px" :span="7">
-          <h3 style="padding:5px; font-weight: 900;">Apply A discount</h3>
+          <h3 style="padding:5px; font-weight: 900;">Apply a discount</h3>
           <h3 style="padding:5px; font-weight: 900;">Discount</h3>
           <a-input-number
             class="placeholder"
@@ -164,7 +180,7 @@
             v-if="debtOrder.discount>13"
             style="padding:5px; font-weight: 900; color:#FF2898"
           >Caution: This discount is above the 13% liquidation penalty!</h3>
-          <h3 style="padding:5px; font-weight: 900;">You'll get</h3>
+          <h3 style="padding:5px; font-weight: 900;">You'll get:</h3>
           <h3 v-if="debtOrder.cdpId==null" style="padding:5px; font-weight: 900; color:#FF2898">-</h3>
           <h3
             v-if="debtOrder.cdpId!=null"
@@ -266,6 +282,9 @@ export default {
 
 <style scoped>
 .card {
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: white;
   margin: 50px;
   min-height: 700px;
@@ -296,7 +315,10 @@ export default {
 
 .verticalLine {
   border-right-style: solid;
+  border-width: thin;
   height: 400px;
+  padding-left:25px;
+  width:1px;
 }
 
 .placeholder {
@@ -311,6 +333,14 @@ export default {
   content: attr(data-placeholder);
   pointer-events: none;
   opacity: 0.6;
+}
+
+.infoButton {
+  background: #ff95cd;
+  border: green;
+  width: 25px;
+  border-radius: 20px;
+  font-weight: 900;
 }
 </style>
 
