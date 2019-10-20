@@ -312,8 +312,6 @@ export default {
 
 .modal {
   font-family: "Nunito" !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .BuyButton {
