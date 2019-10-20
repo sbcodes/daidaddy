@@ -5,7 +5,8 @@ import {
   Col,
   Modal,
   Radio,
-  InputNumber
+  InputNumber,
+  Popover
 } from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
 
@@ -34,6 +35,7 @@ Vue.component(SellYourCDPSection.name, SellYourCDPSection);
 Vue.component(HowItWorks.name, HowItWorks);
 Vue.component(MadeBy.name, MadeBy);
 Vue.component(InputNumber.name, InputNumber);
+Vue.component(Popover.name, Popover);
 
 // Vue.use(VModal);
 

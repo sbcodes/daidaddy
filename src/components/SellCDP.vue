@@ -14,19 +14,16 @@
           >Sell your CDP</a-button>
         </a-col>
       </a-row>
-      <div v-if="cdpInfo.length>0">
+      <div v-if="myListings.length>0">
         <a-row>
-          <a-col :span="2">
+          <a-col :span="3">
             <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
           </a-col>
           <a-col :span="3">
-            <h4 style="font-weight: 900;">Dai Drawn</h4>
-          </a-col>
-          <a-col :span="3">
-            <h4 style="font-weight: 900;">Collateral/Ratio</h4>
+            <h4 style="font-weight: 900;">Total Debt</h4>
           </a-col>
           <a-col :span="4">
-            <h4 style="font-weight: 900;">Outstanding Fees</h4>
+            <h4 style="font-weight: 900;">Collateral/Ratio</h4>
           </a-col>
           <a-col :span="3">
             <h4 style="font-weight: 900;">CDP Value</h4>
@@ -35,29 +32,26 @@
             <h4 style="font-weight: 900;">Discount</h4>
           </a-col>
           <a-col :span="3">
-            <h4 class="PinkText" style="font-weight: 900;">Final Value</h4>
+            <h4 class="PinkText" style="font-weight: 900;">You'll get</h4>
           </a-col>
-          <a-col :span="3">
+          <a-col :span="5" style="text-align:center">
             <h4 style="font-weight: 900;"></h4>
           </a-col>
         </a-row>
         <hr />
-        <div v-for="(cdp, index) in cdpInfo" :key="index">
+        <div v-for="(cdp, index) in myListings" :key="index">
           <a-row
             style="padding-top:15px; padding-bottom:15px;"
             :style="index%2==1?'background:#FFF5F7':'background:white'"
           >
-            <a-col style="padding-top:5px" :span="2">
+            <a-col style="padding-top:5px" :span="3">
               <h4 style="padding-left:15px">{{cdp.CDPNo}}</h4>
             </a-col>
             <a-col style="padding-top:5px" :span="3">
               <h4>{{cdp.daiDrawn}}</h4>
             </a-col>
-            <a-col style="padding-top:5px" :span="3">
-              <h4>{{cdp.collateralRatio}}</h4>
-            </a-col>
             <a-col style="padding-top:5px" :span="4">
-              <h4>{{cdp.fee}}</h4>
+              <h4>{{cdp.collateralRatio}}</h4>
             </a-col>
             <a-col style="padding-top:5px" :span="3">
               <h4>{{cdp.value}}</h4>
@@ -68,8 +62,9 @@
             <a-col style="padding-top:5px" :span="3">
               <h4 class="PinkText">{{cdp.finalPrice}} ETH</h4>
             </a-col>
-            <a-col :span="3">
-              <a-button class="BuyButton" type="primary">Buy</a-button>
+            <a-col :span="4">
+              <a-button class="BuyButton" type="primary" style="margin-right:15px">Edit</a-button>
+              <a-button class="BuyButton" type="primary">Remove</a-button>
             </a-col>
           </a-row>
           <hr style="padding:0px; margin:0px" />
@@ -124,14 +119,14 @@
           </a-row>
           <hr />
           <div
-            v-for="(cdp, index) in cdpInfo"
+            v-for="(cdp, index) in myCdps"
             :key="index"
             :style="index%2==1?'background:#FFF5F7':'background:white'"
           >
             <div @click="selectCDP(index)" style="cursor: pointer">
               <a-row style="padding-top:15px; padding-bottom:15px;">
                 <a-col style="padding-left:25px" :span="4">
-                  <a-radio style="padding-top:5px" :checked="cdpInfo[index].selected"></a-radio>
+                  <a-radio style="padding-top:5px" :checked="myCdps[index].selected"></a-radio>
                 </a-col>
                 <a-col style="padding-top:5px" :span="5">
                   <h4>{{cdp.CDPNo}}</h4>
@@ -164,7 +159,7 @@
           <h3
             v-if="debtOrder.cdpId!=null"
             style="padding:5px; font-weight: 900; color:#FF2898"
-          >{{cdpInfo[debtOrder.debtIndex].value * (100-debtOrder.discount)/100}} ETH</h3>
+          >{{myCdps[debtOrder.debtIndex].value * (100-debtOrder.discount)/100}} ETH</h3>
         </a-col>
       </a-row>
     </a-modal>
@@ -189,13 +184,13 @@ export default {
       this.visible = false;
     },
     selectCDP(cdpId) {
-      this.cdpInfo = this.cdpInfo.map(x => {
+      this.myCdps = this.myCdps.map(x => {
         x.selected = false;
         return x;
       });
-      this.cdpInfo[cdpId].selected = true;
+      this.myCdps[cdpId].selected = true;
       this.debtOrder.debtIndex = cdpId;
-      this.debtOrder.cdpId = this.cdpInfo[cdpId].cdpId;
+      this.debtOrder.cdpId = this.myCdps[cdpId].cdpId;
     }
   },
   data() {
@@ -206,59 +201,37 @@ export default {
         cdpId: null
       },
       visible: false,
-      cdpInfo: [
+      myListings: [
+        {
+          cdpId:
+            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
+          CDPNo: 3905,
+          daiDrawn: 9605,
+          collateralRatio: "166.19 Eth | 307.93%",
+          fee: 884.0,
+          value: 118.165,
+          discount: 2,
+          finalPrice: 115.801,
+          selected: false
+        }
+      ],
+      myCdps: [
         {
           cdpId:
             "0x0000000000000000000000000000000000000000000000000000000000001b4e",
           CDPNo: 69420,
-          daiDrawn: 666,
-          collateralRatio: "2 Eth | 200%",
+          daiDrawn: 50,
+          collateralRatio: "1 Eth | 421%",
           fee: 0.042069,
-          value: 1,
+          value: 0.75,
           discount: 5,
-          finalPrice: 0.95,
+          finalPrice: 0.7125,
           selected: false
         },
         {
           cdpId:
             "0x0000000000000000000000000000000000000000000000000000000000001b4e",
-          CDPNo: 69420,
-          daiDrawn: 666,
-          collateralRatio: "2 Eth | 200%",
-          fee: 0.042069,
-          value: 1,
-          discount: 5,
-          finalPrice: 0.95,
-          selected: false
-        },
-        {
-          cdpId:
-            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
-          CDPNo: 69420,
-          daiDrawn: 666,
-          collateralRatio: "2 Eth | 200%",
-          fee: 0.042069,
-          value: 1,
-          discount: 5,
-          finalPrice: 0.95,
-          selected: false
-        },
-        {
-          cdpId:
-            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
-          CDPNo: 69420,
-          daiDrawn: 666,
-          collateralRatio: "2 Eth | 200%",
-          fee: 0.042069,
-          value: 1,
-          discount: 5,
-          finalPrice: 0.95,
-          selected: false
-        },
-        {
-          cdpId:
-            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
-          CDPNo: 69420,
+          CDPNo: 69421,
           daiDrawn: 666,
           collateralRatio: "2 Eth | 200%",
           fee: 0.042069,
