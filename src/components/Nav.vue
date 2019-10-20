@@ -13,14 +13,14 @@
         <li class="nav-item">
           <router-link
             class="nav-link"
-            :style="$route.name=='buy'?'text-decoration: underline':''"
+            :style="$route.name=='buy'?'border-bottom: 1px solid #ffffff':''"
             to="/buy"
           >Buy</router-link>
         </li>
         <li class="nav-item">
           <router-link
             class="nav-link"
-            :style="$route.name=='listingz'?'text-decoration: underline':''"
+            :style="$route.name=='listingz'?'border-bottom: 1px solid #ffffff':''"
             to="/listing?open=true"
           >Sell</router-link>
         </li>
@@ -31,7 +31,7 @@
         <li class="nav-item">
           <router-link
             class="nav-link"
-            :style="$route.name=='listing'?'text-decoration: underline':''"
+            :style="$route.name=='listing'?'border-bottom: 1px solid #ffffff':''"
             to="/listing"
           >My Listings</router-link>
         </li>
