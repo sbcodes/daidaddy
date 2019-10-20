@@ -99,7 +99,10 @@ export default new Vuex.Store({
       }
 
       let daiDaddy = await DaiDaddy.deployed()
-      let numberOfSales = await daiDaddy.debtItems
+      console.log(daiDaddy)
+      let numberOfSales = await daiDaddy.debtItems.call()
+      console.log(numberOfSales)
+      console.log(numberOfSales.toString(10))
       console.log("Debt boi!")
       // let fundFactory = await FundFactory.at(state.factoryAddress)
       // console.log("logging vyper from UI")
@@ -150,6 +153,14 @@ export default new Vuex.Store({
       console.log(tab)
       console.log(tab.toString(10))
     },
+    [actions.SELL_CDP]: async function ({
+      commit,
+      dispatch,
+      state
+    }, cdpId) {
+      console.log("selling CDP", cdpId)
+    },
+
     [actions.CLOSE_MINING_DIALOG]: async function ({
       commit,
       dispatch,
