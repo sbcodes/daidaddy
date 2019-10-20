@@ -4,7 +4,8 @@
         <img src="/img/bigMichaelLogo.png" class="biglogo">
       </a-col>
       <a-col :md="10" :span="24" type="flex">
-        <img src="/img/MichaelBoxes.png" class="hero-michael">
+        <img src="/img/Michael_Boxes.png" class="hero-michael">
+        <router-link to="/listing?open=true" class="cta" />
       </a-col>
     </a-row>
 </template>
@@ -35,5 +36,13 @@ export default {
 
 .logo-col {
   padding-left: 71px;
+}
+
+.cta {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 60px;
 }
 </style>
