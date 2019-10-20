@@ -4,7 +4,8 @@ import {
   Row,
   Col,
   Modal,
-  Radio
+  Radio,
+  InputNumber
 } from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
 
@@ -31,6 +32,7 @@ Vue.component(Radio.name, Radio)
 Vue.component(SellYourCDPSection.name, SellYourCDPSection);
 Vue.component(HowItWorks.name, HowItWorks);
 Vue.component(MadeBy.name, MadeBy);
+Vue.component(InputNumber.name, InputNumber);
 
 Vue.config.productionTip = false;
 

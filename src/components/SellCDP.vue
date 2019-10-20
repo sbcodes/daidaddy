@@ -76,56 +76,70 @@
         </div>
       </div>
     </div>
-    <a-modal class="model" :width="900" style="width:900px" v-model="visible" @ok="handleOk">
-      <h2 style="padding-bottom:25px">Sell your CDP</h2>
+    <a-modal
+      class="model"
+      :height="500"
+      :width="900"
+      style="width:900px"
+      v-model="visible"
+      @ok="handleOk"
+    >
+      <h2 style="padding-bottom:25px">Sell CDP</h2>
       <a-row>
-        <a-col :span="4">
-          <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
+        <a-col :span="16">
+          <h3 style="font-weight: 900;">Select</h3>
+          <a-row>
+            <a-col :span="4">
+              <h4 style="font-weight: 900;"></h4>
+            </a-col>
+            <a-col :span="5">
+              <h4 style="font-weight: 900; padding-left:15px">CDP #</h4>
+            </a-col>
+            <a-col :span="5">
+              <h4 style="font-weight: 900;">Total Debt</h4>
+            </a-col>
+            <a-col :span="5">
+              <h4 style="font-weight: 900;">Collateral/Ratio</h4>
+            </a-col>
+            <a-col :span="4">
+              <h4 style="font-weight: 900;">CDP Value</h4>
+            </a-col>
+          </a-row>
+          <hr />
+          <div
+            v-for="(cdp, index) in cdpInfo"
+            :key="index"
+            :style="index%2==1?'background:#FFF5F7':'background:white'"
+          >
+            <a-row style="padding-top:15px; padding-bottom:15px;">
+              <a-col style="padding-left:25px" :span="4">
+                <a-radio :checked="cdpInfo[index].selected" @click="selectCDP(index)"></a-radio>
+              </a-col>
+              <a-col style="padding-top:5px" :span="5">
+                <h4>{{cdp.CDPNo}}</h4>
+              </a-col>
+              <a-col style="padding-top:5px" :span="5">
+                <h4>{{cdp.daiDrawn}}</h4>
+              </a-col>
+              <a-col style="padding-top:5px" :span="5">
+                <h4>{{cdp.collateralRatio}}</h4>
+              </a-col>
+              <a-col style="padding-top:5px" :span="4">
+                <h4>{{cdp.value}}</h4>
+              </a-col>
+            </a-row>
+            <hr style="padding:0px; margin:0px" />
+          </div>
         </a-col>
-        <a-col :span="4">
-          <h4 style="font-weight: 900;">Dai Drawn</h4>
-        </a-col>
-        <a-col :span="5">
-          <h4 style="font-weight: 900;">Collateral/Ratio</h4>
-        </a-col>
-        <a-col :span="5">
-          <h4 style="font-weight: 900;">Outstanding Fees</h4>
-        </a-col>
-        <a-col :span="4">
-          <h4 style="font-weight: 900;">CDP Value</h4>
-        </a-col>
-        <a-col :span="2">
-          <h4 style="font-weight: 900;"></h4>
+        <a-col class="verticalLine" :span="1" />
+        <a-col style="padding-left:25px" :span="7">
+          <h3 style="font-weight: 900;">Apply A discount</h3>
+          <h3 style="font-weight: 900;">Discount</h3>
+          <a-input-number :min="1" :max="100" v-model="debtOrder.discount" />
+          <h3 style="font-weight: 900;">You'll get</h3>
+          <h3 style="font-weight: 900; color:#FF2898">-</h3>
         </a-col>
       </a-row>
-      <hr />
-      <div
-        v-for="(cdp, index) in cdpInfo"
-        :key="index"
-        :style="index%2==1?'background:#FFF5F7':'background:white'"
-      >
-        <a-row style="padding-top:15px; padding-bottom:15px;">
-          <a-col style="padding-top:5px" :span="4">
-            <h4 style="padding-left:15px">{{cdp.CDPNo}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="4">
-            <h4>{{cdp.daiDrawn}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="5">
-            <h4>{{cdp.collateralRatio}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="5">
-            <h4>{{cdp.fee}}</h4>
-          </a-col>
-          <a-col style="padding-top:5px" :span="4">
-            <h4>{{cdp.value}}</h4>
-          </a-col>
-          <a-col :span="2">
-            <a-radio :checked="cdpInfo[index].selected" @click="selectCDP(index)"></a-radio>
-          </a-col>
-        </a-row>
-        <hr style="padding:0px; margin:0px" />
-      </div>
     </a-modal>
   </div>
 </template>
@@ -152,6 +166,10 @@ export default {
   },
   data() {
     return {
+      debtOrder: {
+        discount: 5,
+        cdpId: null
+      },
       visible: false,
       cdpInfo: [
         {
@@ -238,6 +256,11 @@ export default {
 .checkbox {
   background: white;
   border: white;
+}
+
+.verticalLine {
+  border-right-style: solid;
+  height: 400px;
 }
 </style>
 
