@@ -177,6 +177,33 @@ export default new Vuex.Store({
         })
       }
     },
+    [actions.BUY_CDP]: async function ({
+      commit,
+      dispatch,
+      state
+    }, saleObject) {
+      console.log("buying CDP", saleObject)
+      let daiDaddy = await DaiDaddy.deployed()
+
+      commit(mutations.SET_MINING_TRANSACTION_OBJECT, {
+        status: 'pending',
+        txHash: ""
+      })
+
+      let saleValue = await daiDaddy.debtPositionPriceInEth.call(0)
+
+      let saleTx = await daiDaddy.buyCDP(0, {
+        from: state.account,
+        value: saleValue
+      })
+
+      if (saleTx) {
+        commit(mutations.SET_MINING_TRANSACTION_OBJECT, {
+          status: 'done',
+          txHash: saleTx.tx
+        })
+      }
+    },
 
     [actions.CLOSE_MINING_DIALOG]: async function ({
       commit,
