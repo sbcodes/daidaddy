@@ -66,7 +66,9 @@ export default {
   margin-right: 2.25rem;
 }
 .nav {
-  padding: 20px 80px;
+  padding-top:20px;
+  padding-left:50px;
+  padding-right:50px;
   box-sizing: border-box;
   display: flex;
   align-items: center;

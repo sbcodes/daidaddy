@@ -18,7 +18,7 @@
             <a-popover title="Total Debt">
               <template
                 slot="content"
-              >The total debt drawn out of the CDP. This includes the stability fee incured over the duration of the CDP's life span.</template>
+              >The total debt on the CDP. This is the total DAI drawn + all fees incurred over the duration of the CDP's lifespan.</template>
               <a-button size="small" style="font-weight:900;" class="infoButton" type="primary">i</a-button>
             </a-popover>
           </h4>
