@@ -324,6 +324,10 @@ export default {
   box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
+.BuyButton:hover {
+  background: #ff95cd;
+}
+
 .PinkText {
   color: #ff1491;
   font-weight: 900;
