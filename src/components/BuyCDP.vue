@@ -284,6 +284,10 @@ export default {
   padding: 25px;
 }
 
+.model {
+  font-family: "Nunito" !important;
+}
+
 .BuyButton {
   background: #ff95cd;
   border: green;

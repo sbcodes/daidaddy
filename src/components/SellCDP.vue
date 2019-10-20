@@ -110,7 +110,7 @@
     </div>
     <a-modal
       class="model"
-      :height="500"
+      :height="400"
       :width="900"
       style="width:900px"
       v-model="visible"
@@ -205,6 +205,7 @@
           >{{myCdps[debtOrder.debtIndex].value * (100-debtOrder.discount)/100}} ETH</h3>
         </a-col>
       </a-row>
+      <p style="padding-top:15px">Once you've listed your CDP for sale it will be transfered to the DaiDaddy contract where it will be held in escrow until someone buys it. At any point in time up to when it is bought you can cancel the sale. As soon as someone buys it the funds will automatically get transferred to your wallet.</p>
     </a-modal>
   </div>
 </template>
@@ -309,6 +310,12 @@ export default {
   padding: 25px;
 }
 
+.modal {
+  font-family: "Nunito" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .BuyButton {
   background: #ff95cd;
   border: green;
@@ -332,7 +339,7 @@ export default {
 .verticalLine {
   border-right-style: solid;
   border-width: thin;
-  height: 400px;
+  height: 200px;
   padding-left: 25px;
   width: 1px;
 }
