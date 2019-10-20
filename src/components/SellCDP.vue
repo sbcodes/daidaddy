@@ -16,7 +16,10 @@
         </a-col>
       </a-row>
 
-      <div v-if="myListings.length==0" style="text-align:center;padding-top:100px">
+      <div
+        v-if="myListings.length==0"
+        style="text-align:center;padding-top:100px; padding-bottom:100px"
+      >
         <h2 style="font-weight: 900;">
           Find yourself a
           <span style="color:#FFA1D3">#daidaddy 🤑</span>
@@ -107,7 +110,7 @@
     </div>
     <a-modal
       class="model"
-      :height="500"
+      :height="400"
       :width="900"
       style="width:900px"
       v-model="visible"
@@ -127,7 +130,7 @@
             type="primary"
             @click="sellCDP"
             :disabled="debtOrder.cdpId==null"
-          >Sell</a-button>
+          >Sell CDP</a-button>
         </div>
       </template>
       <h2 style="padding-bottom:25px">Sell CDP</h2>
@@ -202,6 +205,7 @@
           >{{myCdps[debtOrder.debtIndex].value * (100-debtOrder.discount)/100}} ETH</h3>
         </a-col>
       </a-row>
+      <p style="padding-top:15px">Once you've listed your CDP for sale it will be transfered to the DaiDaddy contract where it will be held in escrow until someone buys it. At any point in time up to when it is bought you can cancel the sale. As soon as someone buys it the funds will automatically get transferred to your wallet.</p>
     </a-modal>
   </div>
 </template>
@@ -293,17 +297,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .card {
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: white;
   margin: 50px;
-  min-height: 700px;
+  /* min-height: 700px; */
   min-width: 900px;
   border-radius: 25px;
   padding: 25px;
+}
+
+.modal {
+  font-family: "Nunito" !important;
 }
 
 .BuyButton {
@@ -329,7 +337,7 @@ export default {
 .verticalLine {
   border-right-style: solid;
   border-width: thin;
-  height: 400px;
+  height: 200px;
   padding-left: 25px;
   width: 1px;
 }
