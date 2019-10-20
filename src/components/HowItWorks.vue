@@ -5,10 +5,10 @@
         </h2>
         <a-row type="flex" align="center">
             <a-col :span="12">
-                <img src="img/buyMichael.png" class="hiw-michael">
+                <img src="img/sellMichael.png" class="hiw-michael">
             </a-col>
             <a-col :span="12">
-                <img src="img/sellMichael.png" class="hiw-michael">
+                <img src="img/buyMichael.png" class="hiw-michael">
             </a-col>
         </a-row>
         <br />
