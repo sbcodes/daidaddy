@@ -273,7 +273,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .card {
   font-family: "Nunito" !important;
   background: white;
