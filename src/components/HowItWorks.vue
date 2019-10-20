@@ -3,25 +3,24 @@
         <h2 class="howitworksh">
             How it works
         </h2>
-        <a-row type="flex" align="center">
-            <a-col :span="12">
+        <a-row type="flex" align="center" :gutter="80">
+            <a-col :span="12" class="img-container" style="align-items: flex-end;">
                 <img src="img/sellMichael.png" class="hiw-michael">
+                <a-row type="flex" justify="center" style="width: 75%;">
+                    <div style="width: 234px;">
+                        <router-link class="btn pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg" to="/listing?open=true">Sell</router-link>
+                    </div>
+                </a-row>
             </a-col>
-            <a-col :span="12">
+            <a-col :span="12" class="img-container" style="align-items: flex-start;">
                 <img src="img/buyMichael.png" class="hiw-michael">
+                <a-row type="flex" justify="center" style="width: 75%;">
+                    <div style="width: 234px;">
+                        <router-link class="btn pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg" to="/buy">Buy</router-link>
+                    </div>
+                </a-row>
             </a-col>
         </a-row>
-        <br />
-        <br />
-        <a-row type="flex" align="center" justify="center" :gutter="64">
-            <a-col :span="12" class="btn-container">
-                <router-link class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg" to="/listing?open=true">Sell</router-link>
-            </a-col>
-            <a-col :span="12" class="btn-container">
-                <router-link class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg" to="/buy">Buy</router-link>
-            </a-col>
-        </a-row>
-
     </div>
 </template>
 
@@ -43,17 +42,20 @@ export default {
         line-height: 68px;
         color: #FF94CE;
         text-align: center;
+        margin-bottom: 1.5em;
     }
     .hiw-michael {
-        max-width: 80%;
+        max-width: 75%;
         height: auto;
         object-fit: contain;
-        z-index: -1;
     }
-    .btn-container {
+    .img-container {
         display: flex;
-        justify-content: center;
-        max-width: 300px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .btn {
+        margin-top: 2rem;
     }
 
 </style>
