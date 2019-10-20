@@ -2,6 +2,7 @@
   <div id="app">
     <router-view />
     <mining-transaction />
+    <MadeBy />
   </div>
 </template> 
 
@@ -101,9 +102,8 @@ export default {
   }
 }
 
-
 .pink-button {
-  background: #FFC1CC !important;
+  background: #ffc1cc !important;
   border: green;
   border-radius: 25px;
   font-family: Nunito;

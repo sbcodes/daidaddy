@@ -10,10 +10,10 @@
             <br />
             <a-row style="max-width: 500px" type="flex" align="center" :gutter="16">
                 <a-col :span="12">
-                    <router-link to="/sell" class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg">Sell</router-link>
+                    <router-link to="/listing?open=true" class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg">Sell</router-link>
                 </a-col>
                 <a-col :span="12">
-                    <router-link to="buy" class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg">Buy</router-link>
+                    <router-link to="/buy" class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg">Buy</router-link>
                 </a-col>
             </a-row>
         </a-col>
