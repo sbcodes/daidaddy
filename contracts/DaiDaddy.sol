@@ -28,7 +28,7 @@ contract DaiDaddy {
     // debt mappings and orders
     Debt[] public debtBook;
     mapping (bytes32 => uint256) cupsToDebt;
-    uint256 debtItems;
+    uint256 public debtItems;
     mapping(address => uint256[]) addressToDebtSellers;
 
     // contract instances

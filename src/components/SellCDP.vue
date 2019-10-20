@@ -84,6 +84,23 @@
       v-model="visible"
       @ok="handleOk"
     >
+      <template slot="footer">
+        <div style="text-align:right">
+          <a-button
+            key="submit"
+            type="secondary"
+            @click="handleOk"
+            style="border-radius: 25px;"
+          >Cancel</a-button>
+          <a-button
+            key="submit"
+            class="BuyButton"
+            type="primary"
+            @click="sellCDP"
+            :disabled="debtOrder.cdpInfo==null"
+          >Sell</a-button>
+        </div>
+      </template>
       <h2 style="padding-bottom:25px">Sell CDP</h2>
       <a-row>
         <a-col :span="16">
@@ -111,33 +128,35 @@
             :key="index"
             :style="index%2==1?'background:#FFF5F7':'background:white'"
           >
-            <a-row style="padding-top:15px; padding-bottom:15px;">
-              <a-col style="padding-left:25px" :span="4">
-                <a-radio :checked="cdpInfo[index].selected" @click="selectCDP(index)"></a-radio>
-              </a-col>
-              <a-col style="padding-top:5px" :span="5">
-                <h4>{{cdp.CDPNo}}</h4>
-              </a-col>
-              <a-col style="padding-top:5px" :span="5">
-                <h4>{{cdp.daiDrawn}}</h4>
-              </a-col>
-              <a-col style="padding-top:5px" :span="5">
-                <h4>{{cdp.collateralRatio}}</h4>
-              </a-col>
-              <a-col style="padding-top:5px" :span="4">
-                <h4>{{cdp.value}}</h4>
-              </a-col>
-            </a-row>
+            <div @click="selectCDP(index)" style="cursor: pointer">
+              <a-row style="padding-top:15px; padding-bottom:15px;">
+                <a-col style="padding-left:25px" :span="4">
+                  <a-radio style="padding-top:5px" :checked="cdpInfo[index].selected"></a-radio>
+                </a-col>
+                <a-col style="padding-top:5px" :span="5">
+                  <h4>{{cdp.CDPNo}}</h4>
+                </a-col>
+                <a-col style="padding-top:5px" :span="5">
+                  <h4>{{cdp.daiDrawn}}</h4>
+                </a-col>
+                <a-col style="padding-top:5px" :span="5">
+                  <h4>{{cdp.collateralRatio}}</h4>
+                </a-col>
+                <a-col style="padding-top:5px" :span="4">
+                  <h4>{{cdp.value}}</h4>
+                </a-col>
+              </a-row>
+            </div>
             <hr style="padding:0px; margin:0px" />
           </div>
         </a-col>
         <a-col class="verticalLine" :span="1" />
         <a-col style="padding-left:25px" :span="7">
-          <h3 style="font-weight: 900;">Apply A discount</h3>
-          <h3 style="font-weight: 900;">Discount</h3>
+          <h3 style="padding:5px; font-weight: 900;">Apply A discount</h3>
+          <h3 style="padding:5px; font-weight: 900;">Discount</h3>
           <a-input-number :min="1" :max="100" v-model="debtOrder.discount" />
-          <h3 style="font-weight: 900;">You'll get</h3>
-          <h3 style="font-weight: 900; color:#FF2898">-</h3>
+          <h3 style="padding:5px; font-weight: 900;">You'll get</h3>
+          <h3 style="padding:5px; font-weight: 900; color:#FF2898">-</h3>
         </a-col>
       </a-row>
     </a-modal>
@@ -149,6 +168,10 @@ import { mapActions, mapState } from "vuex";
 export default {
   name: "BuyCDP",
   methods: {
+    ...mapActions(["SELL_CDP"]),
+    sellCDP() {
+      console.log("SELLING!");
+    },
     showModal() {
       this.visible = true;
     },
@@ -162,6 +185,7 @@ export default {
         return x;
       });
       this.cdpInfo[cdpId].selected = true;
+      this.debtOrder.cdpId = cdpId
     }
   },
   data() {
