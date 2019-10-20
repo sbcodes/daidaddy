@@ -4,7 +4,7 @@ DAI daddy is an autonomous, open-source platform for buying and selling Maker CD
 XXX LOGO/IMAGE
 
 ## Links
-Demo: XXX  
+Demo: https://daidaddy.xyz/  
 Devpost: https://devpost.com/software/diffusion-placeholder/  
 Smart Contract:
 
@@ -87,4 +87,4 @@ truffle migrate --network kovan --reset
 
 ## Additional Resources
 - [Pitch Deck](XXX)
-- [Figma Mockups](XXX)
+- [Figma Mockups](https://www.figma.com/file/BpyPgFM3BROdmXn8J0COqn/dai-daddy-Diffusion?node-id=0%3A1)
