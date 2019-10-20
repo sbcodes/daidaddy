@@ -1,7 +1,16 @@
 <template>
-  <div v-if="ethAddress" class="md-layout">
-    <jazzicon :address="ethAddress" :diameter="25"/>
-    <a class="eth-address md-subheading" :href="buildLink" target="_blank" style="color: white;">{{ dotDotDot }}</a>
+  <div v-if="ethAddress">
+    <a class="eth-address" :href="buildLink" target="_blank" style="color: white;">
+      <span>
+        <a-row type="flex">
+          <a-col :span="5">
+            <jazzicon :address="ethAddress" :diameter="25"></jazzicon>
+          </a-col>
+
+          <a-col :span="12" style="padding-top:3px;padding-left:5px;margin-right:25px">{{ dotDotDot }}</a-col>
+        </a-row>
+      </span>
+    </a>
   </div>
 </template>
 
@@ -39,18 +48,14 @@ export default {
 };
 </script>
 
-// <style lang="scss" scoped>
-// @import "../../styles/variables.scss";
-
+ <style lang="scss" scoped>
 // // Eth Address
-// .eth-address {
-//   display: inline-block;
-//   padding: 0.125rem 0.25rem;
-//   background: rgba($darkgray, 0.05);
-
-//   &:hover {
-//     background: rgba($darkgray, 0.1);
-//     border-bottom: none;
-//   }
-// }
-// </style>
+.eth-address {
+  display: inline-block;
+  padding-top:7px;
+  padding-left:7px;
+  padding-bottom:3px;
+  border-radius: 20px;
+  background: rgba(#ffcae5, 0.5);
+}
+</style>

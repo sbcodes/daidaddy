@@ -55,17 +55,19 @@
         >
           <a-col style="padding-top:5px" :span="3">
             <a :href="'https://mkr.tools/cdp/'+ cdp.CDPNo" target="_blank">
-              <h4 style="padding-left:15px;   text-decoration: underline;">{{cdp.CDPNo}}</h4>
+              <h4
+                style="padding-left:15px;   text-decoration: underline;"
+              >{{numberWithCommas(cdp.CDPNo)}}</h4>
             </a>
           </a-col>
           <a-col style="padding-top:5px" :span="3">
-            <h4>{{cdp.daiDrawn}}</h4>
+            <h4>{{numberWithCommas(cdp.daiDrawn)}} DAI</h4>
           </a-col>
           <a-col style="padding-top:5px" :span="4">
             <h4>{{cdp.collateralRatio}}</h4>
           </a-col>
           <a-col style="padding-top:5px" :span="3">
-            <h4>{{cdp.value}} ETH</h4>
+            <h4>{{numberWithCommas(cdp.value)}} ETH</h4>
           </a-col>
           <a-col style="padding-top:5px" :span="3">
             <h4>{{cdp.discount}} %</h4>
@@ -79,6 +81,7 @@
         </a-row>
         <hr style="padding:0px; margin:0px" />
       </div>
+      <div style="padding-bottom:25px" />
     </div>
   </div>
 </template>
@@ -105,6 +108,9 @@ export default {
         return x;
       });
       this.cdpInfo[cdpId].selected = true;
+    },
+    numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
   },
   data() {
@@ -117,9 +123,9 @@ export default {
           daiDrawn: 151151,
           collateralRatio: "1411.76 ETH | 166.23%",
           fee: 901,
-          value: 522.6312,
+          value: 522.632,
           discount: 2,
-          finalPrice: 512.1712,
+          finalPrice: 512.172,
           selected: false
         },
         {
@@ -128,9 +134,9 @@ export default {
           daiDrawn: 1785,
           collateralRatio: "21.03 ETH | 209%",
           fee: 0.34,
-          value: 10.5312,
+          value: 10.532,
           discount: 6,
-          finalPrice: 9.7929,
+          finalPrice: 9.799,
           selected: false
         },
         {
@@ -139,9 +145,9 @@ export default {
           daiDrawn: 618.16,
           collateralRatio: "5.69 ETH | 163.69%",
           fee: 2.83,
-          value: 2.05312,
+          value: 2.052,
           discount: 9,
-          finalPrice: 1.8823,
+          finalPrice: 1.883,
           selected: false
         },
         {
@@ -149,10 +155,10 @@ export default {
           CDPNo: 1040,
           daiDrawn: 1800.95,
           collateralRatio: "18.3 ETH | 178.14%",
-          fee: 6.70,
-          value: 7.71112,
+          fee: 6.7,
+          value: 7.712,
           discount: 1,
-          finalPrice: 7.6312,
+          finalPrice: 7.632,
           selected: false
         }
       ]
@@ -164,7 +170,7 @@ export default {
 <style scoped>
 .card {
   background: white;
-  margin: 35px;
+  margin: 50px;
   minheight: 700px;
   minwidth: 900px;
   border-radius: 25px;
