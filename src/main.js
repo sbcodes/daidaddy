@@ -10,6 +10,8 @@ import {
 } from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
 
+import Jazzicon from 'vue-jazzicon';
+
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
@@ -38,6 +40,7 @@ Vue.component(InputNumber.name, InputNumber);
 Vue.component(Popover.name, Popover);
 
 // Vue.use(VModal);
+Vue.component('jazzicon', Jazzicon);
 
 Vue.config.productionTip = false;
 

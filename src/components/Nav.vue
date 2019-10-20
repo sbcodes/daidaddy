@@ -36,7 +36,7 @@
           >My Listings</router-link>
         </li>
         <li class="nav-item" style="margin-right: 0;">
-          <!-- meta mask -->
+          <clickable-address :eth-address="account" />
         </li>
       </ul>
     </a-col>
@@ -45,8 +45,16 @@
 
 <script>
 import router from "../router";
+
+import { mapActions, mapState } from "vuex";
+
+import ClickableAddress from "@/components/widgets/ClickableAddress";
 export default {
-  name: "Nav"
+  name: "Nav",
+  components: { ClickableAddress },
+  computed: {
+    ...mapState(["currentNetwork", "account"])
+  }
 };
 </script>
 
@@ -58,7 +66,9 @@ export default {
   margin-right: 2.25rem;
 }
 .nav {
-  padding: 20px 80px;
+  padding-top:20px;
+  padding-left:50px;
+  padding-right:50px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
