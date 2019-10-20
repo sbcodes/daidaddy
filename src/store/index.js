@@ -37,7 +37,11 @@ export default new Vuex.Store({
     etherscanBase: null,
     TokenInfo: null,
     saiTubAddress: "0xa71937147b55Deb8a530C7229C442Fd3F31b7db2",
-    saiTub: null
+    saiTub: null,
+    miningTransactionObject: {
+      status: null,
+      txHash: ''
+    }
   },
   mutations: {
     //WEB3 Stuff
@@ -52,6 +56,9 @@ export default new Vuex.Store({
     },
     [mutations.SET_WEB3]: async function (state, web3) {
       state.web3 = web3;
+    },
+    [mutations.SET_MINING_TRANSACTION_OBJECT](state, miningTransactionObject) {
+      state.miningTransactionObject = miningTransactionObject;
     },
   },
   actions: {
