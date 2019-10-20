@@ -15,7 +15,14 @@
             class="nav-link"
             :style="$route.name=='buy'?'text-decoration: underline':''"
             to="/buy"
-          >Market</router-link>
+          >Buy</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link
+            class="nav-link"
+            :style="$route.name=='listingz'?'text-decoration: underline':''"
+            to="/listing?open=true"
+          >Sell</router-link>
         </li>
       </ul>
     </a-col>
@@ -24,9 +31,9 @@
         <li class="nav-item">
           <router-link
             class="nav-link"
-            :style="$route.name=='sell'?'text-decoration: underline':''"
-            to="/sell"
-          >Listing</router-link>
+            :style="$route.name=='listing'?'text-decoration: underline':''"
+            to="/listing"
+          >My Listings</router-link>
         </li>
         <li class="nav-item" style="margin-right: 0;">
           <!-- meta mask -->
