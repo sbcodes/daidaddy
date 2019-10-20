@@ -1,40 +1,50 @@
 <template>
   <div v-if="miningTransactionObject.status!=null" class="text-center">
-    <md-dialog
-    class="text-center"
-      :md-active.sync="miningTransactionObject.status!=null"
-      style="background-color: #DEDDDE;width:600px"
+    <a-modal
+      class="text-center"
+      v-model="miningTransactionObject.status!=null"
+      style="width:600px; text-align:center"
     >
-      <md-dialog-title
-        v-if="miningTransactionObject.status=='uploading'"
-      >Uploading content to IPFS...</md-dialog-title>
-      <md-dialog-title v-if="miningTransactionObject.status=='pending'">Approve transaction...</md-dialog-title>
-      <md-dialog-title v-if="miningTransactionObject.status=='done'">Transaction mined!</md-dialog-title>
+      <template slot="footer" style="text-align:center">
+        <div style="text-align:center">
+          <a-button
+            key="submit"
+            type="primary"
+            :loading="loading"
+            :disabled="miningTransactionObject.status!='done'"
+            @click="modalClosed"
+            style="color:#FF2898; background:white;border:white"
+          >Dismiss</a-button>
+        </div>
+      </template>
+      <h1 v-if="miningTransactionObject.status=='uploading'">Uploading content to IPFS...</h1>
+      <h1 v-if="miningTransactionObject.status=='pending'">Approve transaction...</h1>
+      <h1 v-if="miningTransactionObject.status=='done'">Transaction mined!</h1>
       <!-- <img
         v-if="miningTransactionObject.status=='uploading'"
         class="text-center"
         alt="step logo"
         style="height:150px;"
         src="../../assets/uploading.gif"
-      /> -->
-      <h1 v-if="miningTransactionObject.status=='pending'">🤞 🙌 🙏</h1>
-      <h1 v-if="miningTransactionObject.status=='done'">🤤 🤑 😋</h1>
+      />-->
+      <h1
+        style="font-size:45px; padding-top:15px"
+        v-if="miningTransactionObject.status=='pending'"
+      >🤞 🙌 🙏</h1>
+      <h1
+        style="font-size:45px; padding-top:15px"
+        v-if="miningTransactionObject.status=='done'"
+      >🤤 🤑 😋</h1>
       <p
-        style="padding:30px"
+        style="padding:20px"
         v-if="miningTransactionObject.status=='pending'"
       >Approve the transaction in your web3 provider to submit it to the blockchain.</p>
 
-      <p style="padding:30px" v-if="miningTransactionObject.status=='done'">
+      <p style="padding:20px" v-if="miningTransactionObject.status=='done'">
         Transaction has been mined! You can view the transaction info on EtherScan
         <clickable-transaction :transaction="miningTransactionObject.txHash" />.
       </p>
-      <md-button
-        v-if="miningTransactionObject.status=='done'"
-        class="md-primary md-raised"
-        @click="modalClosed"
-        style="background: #D81E5B"
-      >Close</md-button>
-    </md-dialog>
+    </a-modal>
   </div>
 </template>
 
@@ -55,8 +65,7 @@ export default {
       this.CLOSE_MINING_DIALOG();
     }
   },
-  mounted() {
-  },
+  mounted() {},
   computed: {
     ...mapState(["etherscanBase", "miningTransactionObject"])
   }

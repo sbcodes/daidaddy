@@ -19,6 +19,7 @@ import Hero from "./components/Hero";
 import SellYourCDPSection from "./components/SellYourCDPSection";
 import HowItWorks from "./components/HowItWorks";
 import MadeBy from "./components/MadeBy";
+// import VModal from 'vue-js-modal'
 
 Vue.component(Button.name, Button);
 Vue.component(Row.name, Row);
@@ -33,6 +34,8 @@ Vue.component(SellYourCDPSection.name, SellYourCDPSection);
 Vue.component(HowItWorks.name, HowItWorks);
 Vue.component(MadeBy.name, MadeBy);
 Vue.component(InputNumber.name, InputNumber);
+
+// Vue.use(VModal);
 
 Vue.config.productionTip = false;
 
