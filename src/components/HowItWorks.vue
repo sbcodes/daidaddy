@@ -15,7 +15,7 @@
         <br />
         <a-row type="flex" align="center" justify="center" :gutter="64">
             <a-col :span="12" class="btn-container">
-                <router-link class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg" to="/sell">Sell</router-link>
+                <router-link class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg" to="/listing?open=true">Sell</router-link>
             </a-col>
             <a-col :span="12" class="btn-container">
                 <router-link class="pink-button ant-btn ant-btn-primary ant-btn-block ant-btn-lg" to="/buy">Buy</router-link>
