@@ -25,7 +25,7 @@ Our smart contract manages the sale and purchase process, taking ownership of th
 - 🇳🇿 Liesl Eichholz - UX/UI, Design
 
 ## Technical Description
-Dai Daddy works by transferring the ownership of a MakerDao CDP to the `DaiDaddy` contract which holds the CDP in escrow until someone buys it. At that point the CDP is transferred to the buyer and the funds for the purchase are sent to the seller.
+DAI daddy works by transferring the ownership of a MakerDao CDP to the `DaiDaddy` contract which holds the CDP in escrow until someone buys it. At that point the CDP is transferred to the buyer and the funds for the purchase are sent to the seller.
 
 The value of the CDP is calculated by looking at the underlying collateral and debt associated with the CDP. These values can be found by querying the MakerDao Single Collateral Dai(SAI) `tub` contract which acts as the SAI CDP engine. From `tub` values associated with a `cup` (an instance of a CDP) can be extracted as follows:
 
@@ -38,7 +38,7 @@ struct Cup {
     }
 ```
 
-Using these values the total value of the CDP can be found by finding the difference between the underlying collateral and debt. DaiDaddy enables you to sell your debt at a discount wich is also considered in this equation as shown below in the `debtPrice` function.
+Using these values the total value of the CDP can be found by finding the difference between the underlying collateral and debt. DAI daddy enables you to sell your debt at a discount, which is also considered in this equation as shown below in the `debtPrice` function.
 
 ```
 function debtPrice(uint _art, uint _ire, uint _discount) public pure returns(uint) {
@@ -51,7 +51,7 @@ This function returns value of the CDP in atto (`10^-18` fractions of a USD, as 
 To find the value of the CDP in Ether the MakerDao price oracle is used via the `Medianzer`. This price is then used to find quantify the value of the CDP in ETH as.
 
 ## Smart Contract
-Dai Daddy Consists of one main smart contract: `DaiDaddy.sol` which stores all buisness logic and acts as the escrow for the CDP's during the transfer. This contract imports instances of the MakerDao `SaiTub.sol` and `Medianizer.sol` to get information on CDPs and current ether price.
+DAI daddy consists of one main smart contract: `DaiDaddy.sol` which stores all buisness logic and acts as the escrow for the CDP's during the transfer. This contract imports instances of the MakerDao `SaiTub.sol` and `Medianizer.sol` to get information on CDPs and current ether price.
 
 The provided migrations script deploys into a local test enviroment. All contracts have also been deployed to the kovan test net and can be found here: `0x130fa137765A189E2132C2AB06F8E2617414b424`
 
