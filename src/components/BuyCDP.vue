@@ -124,8 +124,11 @@
             </a-popover>
           </h4>
         </a-col>
-        <a-col :span="5">
-          <h4 style="font-weight: 900;">Collateral/Ratio</h4>
+        <a-col :span="3">
+          <h4 style="font-weight: 900;">Collateral</h4>
+        </a-col>
+        <a-col :span="3">
+          <h4 style="font-weight: 900;">Ratio</h4>
         </a-col>
         <a-col :span="4">
           <h4 style="font-weight: 900;">CDP Value</h4>
@@ -158,8 +161,11 @@
           <a-col style="padding-top:5px" :span="4">
             <h4>{{numberWithCommas(cdpInfo[selectedCDP].daiDrawn)}} DAI</h4>
           </a-col>
-          <a-col style="padding-top:5px" :span="5">
-            <h4>{{cdpInfo[selectedCDP].collateralRatio}}</h4>
+          <a-col style="padding-top:5px" :span="3">
+            <h4>{{cdpInfo[selectedCDP].collateral}}</h4>
+          </a-col>
+          <a-col style="padding-top:5px" :span="3">
+            <h4>{{cdpInfo[selectedCDP].ratio}}</h4>
           </a-col>
           <a-col style="padding-top:5px" :span="4">
             <h4>{{numberWithCommas(cdpInfo[selectedCDP].value)}} ETH</h4>
@@ -269,6 +275,9 @@ export default {
 
 <style scoped>
 .card {
+  font-family: "Nunito";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: white;
   margin: 50px;
   minheight: 700px;

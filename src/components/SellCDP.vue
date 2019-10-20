@@ -16,7 +16,10 @@
         </a-col>
       </a-row>
 
-      <div v-if="myListings.length==0" style="text-align:center;padding-top:100px; padding-bottom:100px">
+      <div
+        v-if="myListings.length==0"
+        style="text-align:center;padding-top:100px; padding-bottom:100px"
+      >
         <h2 style="font-weight: 900;">
           Find yourself a
           <span style="color:#FFA1D3">#daidaddy 🤑</span>

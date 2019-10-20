@@ -25,19 +25,65 @@ Our smart contract manages the sale and purchase process, taking ownership of th
 - 🇳🇿 Liesl Eichholz - UX/UI, Design
 
 ## Technical Description
-XXX
+Dai Daddy works by transferring the ownership of a MakerDao CDP to the `DaiDaddy` contract which holds the CDP in escrow until someone buys it. At that point the CDP is transferred to the buyer and the funds for the purchase are sent to the seller.
+
+The value of the CDP is calculated by looking at the underlying collateral and debt associated with the CDP. These values can be found by querying the MakerDao Single Collateral Dai(SAI) `tub` contract which acts as the SAI CDP engine. From `tub` values associated with a `cup` (an instance of a CDP) can be extracted as follows:
+
+```
+struct Cup {
+        address  lad;      // CDP owner
+        uint256  ink;      // Locked collateral (in SKR)
+        uint256  art;      // Outstanding normalised debt (tax only)
+        uint256  ire;      // Outstanding normalised debt
+    }
+```
+
+Using these values the total value of the CDP can be found by finding the difference between the underlying collateral and debt. DaiDaddy enables you to sell your debt at a discount wich is also considered in this equation as shown below in the `debtPrice` function.
+
+```
+function debtPrice(uint _art, uint _ire, uint _discount) public pure returns(uint) {
+        return _art * (_ire/10 - 10 ** 18) * (100 - _discount) / 10 ** 20;
+    }
+```
+
+This function returns value of the CDP in atto (`10^-18` fractions of a USD, as defined by a Dai being `1*10^18` atto). 
+
+To find the value of the CDP in Ether the MakerDao price oracle is used via the `Medianzer`. This price is then used to find quantify the value of the CDP in ETH as.
 
 ## Smart Contract
-XXX
+Dai Daddy Consists of one main smart contract: `DaiDaddy.sol` which stores all buisness logic and acts as the escrow for the CDP's during the transfer. This contract imports instances of the MakerDao `SaiTub.sol` and `Medianizer.sol` to get information on CDPs and current ether price.
+
+The provided migrations script deploys into a local test enviroment. All contracts have also been deployed to the kovan test net and can be found here: `0x130fa137765A189E2132C2AB06F8E2617414b424`
+
 
 ## Environment
-XXX
+Everything can be set up using one command within `yarn`.
+```
+yarn install
+```
 
 ## Testing
-XXX
+Tests are written in javascript for the solidity tests.
+```
+truffle test
+```
 
 ## Deployment
-XXX
+To run locally use:
+```
+truffle migrate --network development --reset
+yarn serve
+```
+
+To deploy to Kovan set up a `mnomonic.js` in the root of the directory with the following structure:
+```
+module.exports = 'saddle ... YOUR SEE HERE ... pool';
+```
+
+Then migrate to Kovan using:
+```
+truffle migrate --network kovan --reset
+```
 
 ## Additional Resources
 - [Pitch Deck](XXX)
