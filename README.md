@@ -1,29 +1,38 @@
-# dai-daddy
+# $dai daddy
+DAI daddy is an autonomous, open-source platform for buying and selling Maker CDPs.
 
-## Project setup
-```
-yarn install
-```
+XXX LOGO/IMAGE
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Links
+Demo: XXX
+Devpost: https://devpost.com/software/diffusion-placeholder/
+Smart Contract:
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+### How it Works
+XXX
 
-### Run your tests
-```
-yarn run test
-```
+### Our Team
+- 🇿🇦 Chris Maree - Smart Contracts + Integrations
+- 🇳🇿 Hamed Ali - Front-End
+- 🇳🇿 Stefan Bachmann - Front-End
+- 🇳🇿 Matthias Bachmann - UX/UI, Design
+- 🇳🇿 Liesl Eichholz - UX/UI, Design
 
-### Lints and fixes files
-```
-yarn run lint
-```
+### Technical Description
+XXX
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Smart Contract
+XXX
+
+### Environment
+XXX
+
+### Testing
+XXX
+
+### Deployment
+XXX
+
+### Additional Resources
+Pitch Deck XXX
+Figma Mockups XXX
