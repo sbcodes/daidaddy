@@ -7,6 +7,7 @@
         </a-col>
         <a-col :span="12" style="text-align:right">
           <a-button
+            v-if="myListings.length>0"
             type="primary"
             class="BuyButton"
             style="font-weight: 900;"
@@ -14,6 +15,19 @@
           >Sell your CDP</a-button>
         </a-col>
       </a-row>
+
+      <div v-if="myListings.length==0" style="text-align:center;padding-top:100px">
+        <h2 style="font-weight: 900;">
+          Find yourself a
+          <span style="color:#FFA1D3">#daidaddy 🤑</span>
+        </h2>
+        <a-button
+          type="primary"
+          class="BuyButton"
+          style="font-weight: 900;"
+          @click="showModal"
+        >Sell your CDP</a-button>
+      </div>
       <div v-if="myListings.length>0">
         <a-row>
           <a-col :span="3">
@@ -201,6 +215,18 @@ export default {
     sellCDP() {
       console.log("SELLING!");
       this.SELL_CDP(this.debtOrder);
+      this.myListings.push({
+        cdpId:
+          "0x0000000000000000000000000000000000000000000000000000000000001b4e",
+        CDPNo: 3905,
+        daiDrawn: 9605,
+        collateralRatio: "166.19 ETH | 307.93%",
+        fee: 884.0,
+        value: 118.165,
+        discount: 2,
+        finalPrice: 115.801,
+        selected: false
+      });
     },
     showModal() {
       this.visible = true;
@@ -235,20 +261,7 @@ export default {
         cdpId: null
       },
       visible: false,
-      myListings: [
-        {
-          cdpId:
-            "0x0000000000000000000000000000000000000000000000000000000000001b4e",
-          CDPNo: 3905,
-          daiDrawn: 9605,
-          collateralRatio: "166.19 ETH | 307.93%",
-          fee: 884.0,
-          value: 118.165,
-          discount: 2,
-          finalPrice: 115.801,
-          selected: false
-        }
-      ],
+      myListings: [],
       myCdps: [
         {
           cdpId:
@@ -317,8 +330,8 @@ export default {
   border-right-style: solid;
   border-width: thin;
   height: 400px;
-  padding-left:25px;
-  width:1px;
+  padding-left: 25px;
+  width: 1px;
 }
 
 .placeholder {
